@@ -1,3 +1,8 @@
 # recipe-finder
 
-This is recipe-finder app based on MERN tech-stack
+## Tech-stack
+M ongoDB
+E xpress.js
+R eact.js
+N ode.js
+
