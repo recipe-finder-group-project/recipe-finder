@@ -8,7 +8,8 @@ const getRecipes = async (req, res) => {
   res.status(200).json(recipes)
 }
 
-// get a single recipe
+// get a single recipe by id 
+/// later on i will change it to the name for convenience
 const getRecipe = async (req, res) => {
   const { id } = req.params
 
