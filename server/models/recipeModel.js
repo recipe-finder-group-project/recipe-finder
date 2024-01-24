@@ -28,19 +28,19 @@ const recipeSchema = new Schema(
       type: Array,
       required: true,
     },
-    reviews: [
+    reviews: [ //fix it, cause it makes reviews necessary, while it is optional
       {
         userEmail: {
           type: String,
-          required: true,
+          required: false,
         },
         comment: {
           type: String,
-          required: true,
+          required: false,
         },
         rating: {
           type: Number,
-          required: true,
+          required: false,
         }
       }
     ]

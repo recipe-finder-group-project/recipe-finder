@@ -83,7 +83,7 @@ const updateRecipe = async (req, res) => {
   const recipe = await Recipe.findOneAndUpdate(
     { _id: id },
     {
-      ...req.body,
+      ...req.body, //create logic to handle "reviews" change
     }
   )
 
