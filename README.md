@@ -41,7 +41,7 @@ To run the current version of the app follow those steps:
   cd ..; cd client; npm start;
 ```
 
-Access the server via:
+Access the server app via:
 
 ```
   localhost:5050
