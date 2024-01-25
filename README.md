@@ -34,15 +34,21 @@ To run the current version of the app follow those steps:
 ```
 
 ```bash
-  cd recipe-finder
+  cd recipe-finder/server; npm run dev
 ```
 
 ```bash
-  npm start
+  cd ..; cd client; npm start;
 ```
 
-Access the application via:
+Access the server via:
 
 ```
   localhost:5050
+```
+
+Access the react app via:
+
+```
+  localhost:3000
 ```
