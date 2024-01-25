@@ -24,6 +24,7 @@ The Recipe Finder App © is a web-based application designed to assist users in 
 - [@Adrian Nykiel](https://github.com/adrian9211)
 - [@Adrian Leontescu](https://github.com/Ady119)
 - [@Stefania Annunziata]()
+- [@Mykyta Oleksenko](https://github.com/mykytaoleksenko)
 
 ## Deployment
 
