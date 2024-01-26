@@ -8,6 +8,9 @@ const Navbar = () => {
         <Link to="/">
           <h1>The Recipe Finder App ©</h1>
         </Link>
+          <Link to="/contact">
+              <p>Contact</p>
+          </Link>
       </div>
     </header>
   )
