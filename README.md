@@ -51,5 +51,5 @@ Access the server app via:
 Access the react app via:
 
 ```
-  localhost:3000
+  localhost:3000/home
 ```
