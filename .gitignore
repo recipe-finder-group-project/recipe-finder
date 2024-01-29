@@ -134,4 +134,5 @@ dist
 
 # Jetbrains IDEA files
 
-.idea
+**/.idea
+**/.idea/**
