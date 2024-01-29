@@ -53,3 +53,9 @@ Access the react app via:
 ```
   localhost:3000/home
 ```
+
+or via link: 
+
+```
+https://recipe-finder-dev.netlify.app
+```
