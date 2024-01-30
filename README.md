@@ -51,32 +51,5 @@ Access the server app via:
 Access the react app via:
 
 ```
-  localhost:3000
+  localhost:3000/home
 ```
-
-## Branches
-
-Methodology for branches in Recipe Finder project
-
-- Use the main branch as the default branch, where the stable and tested code is stored. This branch should always be deployable and functional.
-- Create a development branch from the main branch, where you can integrate and test the features from different branches before merging them to the main branch.
-- For each feature or task, create a separate branch from the development branch, following the naming convention: 
-```
-development/client/feature_name
-```
-or 
-```
-development/server/feature_name
-```
-depending on which part of the stack you are working on. 
-For example: 
-```
-development/client/login
- ```
-or 
- ```
-development/server/cart
- ```
-- Work on your feature or task in your branch, committing your changes frequently and pushing them to the remote repository.
-- When your feature or task is done, create a pull request to merge your branch to the development branch, after resolving any conflicts and ensuring that your code passes the tests and follows the coding standards.
-- After your pull request is reviewed and approved by another developer, merge your branch to the master branch and leave your branch.
