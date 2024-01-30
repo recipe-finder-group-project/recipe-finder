@@ -20,7 +20,7 @@ app.use("/api/recipes", recipeRoutes)
 
 // db connection
 mongoose
-  .connect(process.env.DB_URL)
+  .connect(process.env.MONGO_ATLAS)
   .then(() => {
     //listen for requests on port
     app.listen(process.env.PORT, () => {
