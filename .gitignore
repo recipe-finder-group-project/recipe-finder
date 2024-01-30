@@ -131,7 +131,3 @@ dist
 
 # mac stuff
 **/.DS_Store
-
-# Jetbrains IDEA files
-
-.idea
