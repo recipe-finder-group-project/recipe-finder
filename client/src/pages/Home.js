@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react"
 import ReviewCard from "../components/ReviewCard"
 import '../index.css'
 
+
+
 const Home = () => {
   const [recipes, setRecipes] = useState(null)
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      const response = await fetch("/api/recipes")
+      const response = await fetch("https://recipe-finder-server-f153.onrender.com/api/recipes")
       const json = await response.json()
 
       if (response.ok) {

@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
+
 import React from 'react';
+// import axios
+
 
 //pages & components
 import Home from './pages/Home'
@@ -23,5 +26,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
