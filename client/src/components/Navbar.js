@@ -10,7 +10,6 @@ const Navbar = () => {
         <Link to="/">
           <h1>The Recipe Finder App ©</h1>
         </Link>
-        <h1>{process.env.AUTH0_CLIENT_ID}</h1>
         <LoginButton />
         <LogoutButton />
         <Link to="/contact">
