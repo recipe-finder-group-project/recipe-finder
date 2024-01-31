@@ -12,6 +12,7 @@ const app = express()
 //middleware. Prints out info about incoming requests
 app.use(express.json())
 
+//cors middleware to allow requests from client
 app.use(cors({
     origin: "https://recipe-finder-8bfu.onrender.com"
 }))
