@@ -6,8 +6,6 @@ const Navbar = () => {
     <header>
       <div className="container">
         <Link to="/">
-            // logo link
-            {/*<img src={logo-recipe-finder.png} alt="logo" />*/}
           <h1>The Recipe Finder App</h1>
         </Link>
           <Link to="/contact">
