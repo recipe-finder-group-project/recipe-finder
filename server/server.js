@@ -15,9 +15,7 @@ app.use(express.json())
 //app.use(cors())
 
 //cors middleware to allow requests from client
-app.use(cors({
-    origin: "https://recipe-finder-8bfu.onrender.com"
-}))
+app.use(cors());
 app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
