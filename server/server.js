@@ -15,7 +15,11 @@ app.use(express.json())
 //app.use(cors())
 
 //cors middleware to allow requests from client
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://recipe-finder-8bfu.onrender.com",
+  })
+)
 app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
@@ -31,7 +35,10 @@ mongoose
   .then(() => {
     //listen for requests on port
     app.listen(process.env.PORT, () => {
-      console.log("db is connected & server are running on port :", process.env.PORT)
+      console.log(
+        "db is connected & server are running on port :",
+        process.env.PORT
+      )
     })
   })
   .catch((error) => {
