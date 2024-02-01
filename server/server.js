@@ -2,13 +2,17 @@ require("dotenv").config()
 
 const express = require("express")
 const mongoose = require("mongoose")
+const cors = require("cors")
+
 const recipeRoutes = require("./routes/recipes")
+const profileRoutes = require("./routes/profiles")
 
 //express app
 const app = express()
 
 //middleware. Prints out info about incoming requests
 app.use(express.json())
+app.use(cors())
 
 app.use((req, res, next) => {
   console.log(req.path, req.method)
@@ -17,6 +21,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api/recipes", recipeRoutes)
+app.use("/", profileRoutes)
 
 // db connection
 mongoose
