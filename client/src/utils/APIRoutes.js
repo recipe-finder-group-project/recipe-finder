@@ -1,0 +1,1 @@
+export const host = "https://recipe-finder-server-f153.onrender.com";
