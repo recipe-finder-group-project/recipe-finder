@@ -1,16 +1,19 @@
-require("dotenv").config()
+require("dotenv").config() //dot env files import
 
 const express = require("express")
 const mongoose = require("mongoose")
-const recipeRoutes = require("./routes/recipes")
 const cors = require("cors")
 
+const recipeRoutes = require("./routes/recipes")
+
+const profileRoutes = require("./routes/profiles")
 
 //express app
 const app = express()
 
 //middleware. Prints out info about incoming requests
 app.use(express.json())
+//app.use(cors())
 
 //cors middleware to allow requests from client
 app.use(cors({
@@ -23,6 +26,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api/recipes", recipeRoutes)
+app.use("/", profileRoutes)
 
 // db connection
 mongoose
@@ -30,7 +34,7 @@ mongoose
   .then(() => {
     //listen for requests on port
     app.listen(process.env.PORT, () => {
-      console.log("db is connected & listening on port :", process.env.PORT)
+      console.log("db is connected & server are running on port :", process.env.PORT)
     })
   })
   .catch((error) => {
