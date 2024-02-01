@@ -5,7 +5,6 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 
 const recipeRoutes = require("./routes/recipes")
-
 const profileRoutes = require("./routes/profiles")
 
 //express app
@@ -26,7 +25,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api/recipes", recipeRoutes)
-app.use("/", profileRoutes)
+app.use("/api/", profileRoutes)
 
 // db connection
 mongoose
