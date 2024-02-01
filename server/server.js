@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api/recipes", recipeRoutes)
-app.use("", profileRoutes)
+app.use("/", profileRoutes)
 
 // db connection
 mongoose
