@@ -13,7 +13,7 @@ const Profile = () => {
 
   const sendDataToBackend = async (userData) => {
     try {
-      const response = await fetch("https://recipe-finder-server-f153.onrender.com/save-user-data", {
+      const response = await fetch("https://recipe-finder-server-f153.onrender.com/api/profile/save-user-data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
