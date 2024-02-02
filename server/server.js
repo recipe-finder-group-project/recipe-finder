@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api/recipes", recipeRoutes)
-app.use("/", profileRoutes)
+app.use("/api/save-user-data", profileRoutes)
 
 // db connection
 mongoose

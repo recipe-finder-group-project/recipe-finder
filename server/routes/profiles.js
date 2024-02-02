@@ -4,6 +4,6 @@ const { createProfile } = require("../controllers/profileController")
 
 const router = express.Router()
 
-router.post("/save-user-data", createProfile)
+router.post("/", createProfile)
 
 module.exports = router;
