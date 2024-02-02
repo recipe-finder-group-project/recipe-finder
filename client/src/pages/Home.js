@@ -8,7 +8,7 @@ const Home = () => {
   const [recipes, setRecipes] = useState(null)
   useEffect(() => {
     const fetchRecipes = async () => {
-      const response = await fetch("https://recipe-finder-server-f153.onrender.com/api/recipes")
+      const response = await fetch("http://localhost:5050/api/recipes")
       const json = await response.json()
 
       if (response.ok) {

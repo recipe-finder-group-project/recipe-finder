@@ -29,5 +29,5 @@ const createProfile = async (req, res) => {
 }
 
 module.exports = {
-  createProfile,
+  createProfile
 }
