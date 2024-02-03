@@ -15,11 +15,7 @@ app.use(express.json())
 //app.use(cors())
 
 //cors middleware to allow requests from client
-app.use(
-  cors({
-    origin: "https://recipe-finder-client.onrender.com",
-  })
-)
+app.use(cors())
 app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
@@ -27,7 +23,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api/recipes", recipeRoutes)
-app.use("/api/save-user-data", profileRoutes)
+app.use("/", profileRoutes)
 
 // db connection
 mongoose
