@@ -35,6 +35,12 @@ const Home = () => {
                   <li key={index}>{ingredient}</li>
                 ))}
               </ul>
+              <p>Preparation : </p>
+              <ul>
+              {recipe.preparation.map((preparationStep, index) => (
+                  <li key={index}>{preparationStep}</li>
+                ))}
+              </ul>
               <div>
                 <ReviewCard reviews={recipe.reviews}></ReviewCard>
               </div>
