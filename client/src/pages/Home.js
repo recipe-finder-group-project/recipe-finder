@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ReviewCard from "../components/ReviewCard"
-import '../index.css'
-
-
+import "../index.css"
 
 const Home = () => {
   const [recipes, setRecipes] = useState(null)
@@ -25,6 +23,14 @@ const Home = () => {
           recipes.map((recipe) => (
             <React.Fragment key={recipe._id}>
               <h2>{recipe.name}</h2>
+              {recipe.image && (
+                <img className="recipeImage"
+                  src={`data:image/jpeg;base64,${recipe.image.toString(
+                    "base64"
+                  )}`}
+                  alt={"afs"}
+                />
+              )}
               <p>Diet Type - {recipe.dietType}</p>
               <p>Meal Category - {recipe.mealCategory}</p>
               <p>Preparation time - {recipe.preparationTime} min</p>

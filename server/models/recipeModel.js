@@ -28,6 +28,10 @@ const recipeSchema = new Schema(
       type: Array,
       required: true,
     },
+    image:{
+      type: String,
+      required: true,
+    },
     reviews: [ //fix it, cause it makes reviews necessary, while it is optional
       {
         userEmail: {

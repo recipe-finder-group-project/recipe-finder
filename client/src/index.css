@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
 /* layout */
 :root {
@@ -26,16 +26,20 @@ header a {
   color: #333;
   text-decoration: none;
 }
-.pages{
+.pages {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
 }
-
 
 .review-card {
   border: 2px solid black;
   padding: 10px;
   margin-bottom: 10px;
   width: 400px;
+}
+
+.recipeImage {
+  width: 200px;
+  height: 200px;
 }
