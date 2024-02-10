@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       const response = await fetch(
-        "http://localhost:5050/api/recipes/medibreakfast"
+        "http://localhost:5050/api/recipes/vegetariansnack"
       )
       const json = await response.json()
 
