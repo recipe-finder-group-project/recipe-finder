@@ -6,6 +6,7 @@ const {
     deleteRecipe,
     updateRecipe,
     getVeganLunchRecipes,
+    getMediBreakfast,
 } = require('../controllers/recipeController')
 
 const router = express.Router()
@@ -18,6 +19,8 @@ router.get("/search/:id", getRecipe)
 
 // GET vegan lunch recipes
 router.get("/veganlunch", getVeganLunchRecipes)
+
+router.get("/medibreakfast", getMediBreakfast)
 
 // POST a new recipe
 router.post("/", createRecipe)

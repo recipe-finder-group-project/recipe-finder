@@ -4,16 +4,18 @@ import "../index.css"
 
 const Home = () => {
   const [recipes, setRecipes] = useState(null)
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
     const fetchRecipes = async () => {
-      const response = await fetch("http://localhost:5050/api/recipes/veganlunch")
+      const response = await fetch(
+        "http://localhost:5050/api/recipes/medibreakfast"
+      )
       const json = await response.json()
 
       if (response.ok) {
         setRecipes(json)
       }
-      setIsLoading(false);
+      setIsLoading(false)
     }
     fetchRecipes()
   }, [])
@@ -35,7 +37,6 @@ const Home = () => {
 
   return (
     <div className="home">
-
       <div className="recipes">
         {isLoading ? (
           <h1> Loading... </h1>
@@ -44,7 +45,8 @@ const Home = () => {
             <React.Fragment key={recipe._id}>
               <h2>{recipe.name}</h2>
               {recipe.image && (
-                <img className="recipeImage"
+                <img
+                  className="recipeImage"
                   src={`data:image/jpeg;base64,${recipe.image.toString(
                     "base64"
                   )}`}
@@ -61,12 +63,18 @@ const Home = () => {
                   <li key={index}>{ingredient}</li>
                 ))}
               </ul>
+              <p>Preparation : </p>
+              <ul>
+                {recipe.preparation.map((preparationStep, index) => (
+                  <li key={index}>{preparationStep}</li>
+                ))}
+              </ul>
               <div>
                 <ReviewCard reviews={recipe.reviews}></ReviewCard>
               </div>
             </React.Fragment>
-          )))}
-        
+          ))
+        )}
 
         {/* {recipe && (
           <React.Fragment key={recipe._id}>

@@ -36,6 +36,16 @@ const getVeganLunchRecipes = async (req, res) => {
   res.status(200).json(recipes)
 }
 
+const getMediBreakfast = async (req, res) => {
+  const recipes = await Recipe.find({dietType: "Mediterranean", mealCategory: "Breakfast"})
+  
+  if (!recipes){
+    return res.status(404).json({error: "Mediterranean Breakfast Recipes not found. 404"})
+  }
+
+  res.status(200).json(recipes)
+}
+
 //create new recipe
 const createRecipe = async (req, res) => {
   const {
@@ -110,5 +120,6 @@ module.exports = {
   createRecipe,
   deleteRecipe,
   updateRecipe,
-  getVeganLunchRecipes
+  getVeganLunchRecipes,
+  getMediBreakfast,
 }
