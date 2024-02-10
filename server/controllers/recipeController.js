@@ -26,6 +26,16 @@ const getRecipe = async (req, res) => {
   res.status(200).json(recipe)
 }
 
+const getVeganLunchRecipes = async (req, res) => {
+  const recipes = await Recipe.find({dietType: "Vegan", mealCategory: "Lunch"})
+
+  if (!recipes){
+    return res.status(404).json({error: "Vegan Lunch Recipes not found. 404"})
+  }
+
+  res.status(200).json(recipes)
+}
+
 //create new recipe
 const createRecipe = async (req, res) => {
   const {
@@ -100,4 +110,5 @@ module.exports = {
   createRecipe,
   deleteRecipe,
   updateRecipe,
+  getVeganLunchRecipes
 }
