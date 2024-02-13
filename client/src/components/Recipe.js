@@ -9,7 +9,7 @@ const RecipeCard = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       const response = await fetch(
-        "https://recipe-finder-server-xgd5.onrender.com/api/recipes/vegetariansnack"
+        "http://localhost:5050/api/recipes/vegetariansnack"
       )
       const json = await response.json()
 
@@ -22,12 +22,13 @@ const RecipeCard = () => {
   }, [])
 
   return (
-    <div className="recipes">
+    <div className="recipe">
       {isLoading ? (
         <h1> Loading... </h1>
       ) : (
         recipes.map((recipe) => (
           <React.Fragment key={recipe._id}>
+            <div className="recipes">
             <h2>{recipe.name}</h2>
             {recipe.image && (
               <img
@@ -56,6 +57,7 @@ const RecipeCard = () => {
             </ul>
             <div>
               <ReviewCard reviews={recipe.reviews}></ReviewCard>
+            </div>
             </div>
           </React.Fragment>
         ))
