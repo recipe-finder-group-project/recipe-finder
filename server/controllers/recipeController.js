@@ -29,10 +29,7 @@ const getRecipe = async (req, res) => {
 // Later on make reusable code that requests dietType + mealCategory directly
 // to avoid code duplication
 
-const getRecipes = async (req, res) => {
-const dietTypeFilter = req.body.diettype;
-const mealCategoryFilter = req.body.mealcategory;
-
+const getRecipes = async (req, res, dietTypeFilter, mealCategoryFilter) => {
   const recipes = await Recipe.find({
     dietType: dietTypeFilter,
     mealCategory: mealCategoryFilter,
@@ -44,7 +41,7 @@ const mealCategoryFilter = req.body.mealcategory;
       .json({ error: "No recipes find for desired category" })
   }
 
-  return json(recipes)
+  return res.status(200).json(recipes)
 }
 
 const getVeganBreakfastRecipes = async (req, res) => {
