@@ -26,31 +26,86 @@ const getRecipe = async (req, res) => {
   res.status(200).json(recipe)
 }
 
-const getVeganLunchRecipes = async (req, res) => {
-  const recipes = await Recipe.find({dietType: "Vegan", mealCategory: "Lunch"})
+// Later on make reusable code that requests dietType + mealCategory directly
+// to avoid code duplication
 
-  if (!recipes){
-    return res.status(404).json({error: "Vegan Lunch Recipes not found. 404"})
+const getVeganBreakfastRecipes = async(req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Vegan",
+    mealCategory: "Breakfast",
+  })
+
+  if (!recipes) {
+    return res.status(404).json({ error: "Vegan Breakfast Recipes not found. 404" })
+  }
+
+  res.status(200).json(recipes)
+}
+
+const getVeganLunchRecipes = async (req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Vegan",
+    mealCategory: "Lunch",
+  })
+
+  if (!recipes) {
+    return res.status(404).json({ error: "Vegan Lunch Recipes not found. 404" })
+  }
+
+  res.status(200).json(recipes)
+}
+
+const getVeganDinnerRecipes = async (req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Vegan",
+    mealCategory: "Dinner",
+  })
+
+  if (!recipes) {
+    return res.status(404).json({ error: "Vegan Dinner Recipes not found. 404" })
+  }
+
+  res.status(200).json(recipes)
+}
+
+const getVeganSnackRecipes = async (req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Vegan",
+    mealCategory: "Lunch",
+  })
+
+  if (!recipes) {
+    return res.status(404).json({ error: "Vegan Snack Recipes not found. 404" })
   }
 
   res.status(200).json(recipes)
 }
 
 const getMediBreakfast = async (req, res) => {
-  const recipes = await Recipe.find({dietType: "Mediterranean", mealCategory: "Breakfast"})
-  
-  if (!recipes){
-    return res.status(404).json({error: "Mediterranean Breakfast Recipes not found. 404"})
+  const recipes = await Recipe.find({
+    dietType: "Mediterranean",
+    mealCategory: "Breakfast",
+  })
+
+  if (!recipes) {
+    return res
+      .status(404)
+      .json({ error: "Mediterranean Breakfast Recipes not found. 404" })
   }
 
   res.status(200).json(recipes)
 }
 
 const getVegetarianSnack = async (req, res) => {
-  const recipes = await Recipe.find({dietType: "Vegetarian", mealCategory: "Snack"})
+  const recipes = await Recipe.find({
+    dietType: "Vegetarian",
+    mealCategory: "Snack",
+  })
 
-  if (!recipes){
-    return res.status(404).json({error: "Vegetarian Snack Recipes not found. 404"})
+  if (!recipes) {
+    return res
+      .status(404)
+      .json({ error: "Vegetarian Snack Recipes not found. 404" })
   }
 
   res.status(200).json(recipes)
@@ -132,7 +187,10 @@ module.exports = {
   createRecipe,
   deleteRecipe,
   updateRecipe,
+  getVeganBreakfastRecipes,
   getVeganLunchRecipes,
+  getVeganDinnerRecipes,
+  getVeganSnackRecipes,
   getMediBreakfast,
   getVegetarianSnack,
 }
