@@ -2,7 +2,7 @@ const Recipe = require("../models/recipeModel")
 const mongoose = require("mongoose")
 
 //get all recipes
-const getRecipes = async (req, res) => {
+const getAllRecipes = async (req, res) => {
   const recipes = await Recipe.find({}).sort({ createdAt: -1 })
 
   res.status(200).json(recipes)
@@ -24,6 +24,113 @@ const getRecipe = async (req, res) => {
   }
 
   res.status(200).json(recipe)
+}
+
+// Later on make reusable code that requests dietType + mealCategory directly
+// to avoid code duplication
+
+const getRecipes = async (req, res) => {
+const dietTypeFilter = req.body.diettype;
+const mealCategoryFilter = req.body.mealcategory;
+
+  const recipes = await Recipe.find({
+    dietType: dietTypeFilter,
+    mealCategory: mealCategoryFilter,
+  })
+
+  if (!recipes) {
+    return res
+      .status(404)
+      .json({ error: "No recipes find for desired category" })
+  }
+
+  return json(recipes)
+}
+
+const getVeganBreakfastRecipes = async (req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Vegan",
+    mealCategory: "Breakfast",
+  })
+
+  if (!recipes) {
+    return res
+      .status(404)
+      .json({ error: "Vegan Breakfast Recipes not found. 404" })
+  }
+
+  res.status(200).json(recipes)
+}
+
+const getVeganLunchRecipes = async (req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Vegan",
+    mealCategory: "Lunch",
+  })
+
+  if (!recipes) {
+    return res.status(404).json({ error: "Vegan Lunch Recipes not found. 404" })
+  }
+
+  res.status(200).json(recipes)
+}
+
+const getVeganDinnerRecipes = async (req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Vegan",
+    mealCategory: "Dinner",
+  })
+
+  if (!recipes) {
+    return res
+      .status(404)
+      .json({ error: "Vegan Dinner Recipes not found. 404" })
+  }
+
+  res.status(200).json(recipes)
+}
+
+const getVeganSnackRecipes = async (req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Vegan",
+    mealCategory: "Lunch",
+  })
+
+  if (!recipes) {
+    return res.status(404).json({ error: "Vegan Snack Recipes not found. 404" })
+  }
+
+  res.status(200).json(recipes)
+}
+
+const getMediBreakfast = async (req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Mediterranean",
+    mealCategory: "Breakfast",
+  })
+
+  if (!recipes) {
+    return res
+      .status(404)
+      .json({ error: "Mediterranean Breakfast Recipes not found. 404" })
+  }
+
+  res.status(200).json(recipes)
+}
+
+const getVegetarianSnack = async (req, res) => {
+  const recipes = await Recipe.find({
+    dietType: "Vegetarian",
+    mealCategory: "Snack",
+  })
+
+  if (!recipes) {
+    return res
+      .status(404)
+      .json({ error: "Vegetarian Snack Recipes not found. 404" })
+  }
+
+  res.status(200).json(recipes)
 }
 
 //create new recipe
@@ -97,9 +204,16 @@ const updateRecipe = async (req, res) => {
 }
 
 module.exports = {
-  getRecipes,
+  getAllRecipes,
   getRecipe,
   createRecipe,
   deleteRecipe,
   updateRecipe,
+  getRecipes,
+  getVeganBreakfastRecipes,
+  getVeganLunchRecipes,
+  getVeganDinnerRecipes,
+  getVeganSnackRecipes,
+  getMediBreakfast,
+  getVegetarianSnack,
 }

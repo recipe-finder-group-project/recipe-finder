@@ -28,11 +28,17 @@ const recipeSchema = new Schema(
       type: Array,
       required: true,
     },
+    image:{
+      type: String,
+      required: true,
+    },
     preparation:{
       type: Array,
       required: true,
     },
-    reviews: [ //fix it, cause it makes reviews necessary, while it is optional
+    reviews: [ 
+      //fix it later, cause it makes the email & rating itself not required for adding the comment
+      //as an option we may just use validation to avoid most of the common issues
       {
         userEmail: {
           type: String,
