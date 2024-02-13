@@ -1,10 +1,11 @@
 const express = require("express")
 const {
-    getRecipes,
+    getAllRecipes,
     getRecipe,
     createRecipe,
     deleteRecipe,
     updateRecipe,
+    getRecipes,
     getVeganLunchRecipes,
     getMediBreakfast,
     getVegetarianSnack,

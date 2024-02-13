@@ -2,7 +2,7 @@ const Recipe = require("../models/recipeModel")
 const mongoose = require("mongoose")
 
 //get all recipes
-const getRecipes = async (req, res) => {
+const getAllRecipes = async (req, res) => {
   const recipes = await Recipe.find({}).sort({ createdAt: -1 })
 
   res.status(200).json(recipes)
@@ -29,14 +29,34 @@ const getRecipe = async (req, res) => {
 // Later on make reusable code that requests dietType + mealCategory directly
 // to avoid code duplication
 
-const getVeganBreakfastRecipes = async(req, res) => {
+const getRecipes = async (req, res) => {
+const dietTypeFilter = req.body.diettype;
+const mealCategoryFilter = req.body.mealcategory;
+
+  const recipes = await Recipe.find({
+    dietType: dietTypeFilter,
+    mealCategory: mealCategoryFilter,
+  })
+
+  if (!recipes) {
+    return res
+      .status(404)
+      .json({ error: "No recipes find for desired category" })
+  }
+
+  return json(recipes)
+}
+
+const getVeganBreakfastRecipes = async (req, res) => {
   const recipes = await Recipe.find({
     dietType: "Vegan",
     mealCategory: "Breakfast",
   })
 
   if (!recipes) {
-    return res.status(404).json({ error: "Vegan Breakfast Recipes not found. 404" })
+    return res
+      .status(404)
+      .json({ error: "Vegan Breakfast Recipes not found. 404" })
   }
 
   res.status(200).json(recipes)
@@ -62,7 +82,9 @@ const getVeganDinnerRecipes = async (req, res) => {
   })
 
   if (!recipes) {
-    return res.status(404).json({ error: "Vegan Dinner Recipes not found. 404" })
+    return res
+      .status(404)
+      .json({ error: "Vegan Dinner Recipes not found. 404" })
   }
 
   res.status(200).json(recipes)
@@ -182,11 +204,12 @@ const updateRecipe = async (req, res) => {
 }
 
 module.exports = {
-  getRecipes,
+  getAllRecipes,
   getRecipe,
   createRecipe,
   deleteRecipe,
   updateRecipe,
+  getRecipes,
   getVeganBreakfastRecipes,
   getVeganLunchRecipes,
   getVeganDinnerRecipes,
