@@ -29,10 +29,13 @@ const getRecipe = async (req, res) => {
 // Later on make reusable code that requests dietType + mealCategory directly
 // to avoid code duplication
 
-const getRecipes = async (req, res, dietTypeFilter, mealCategoryFilter) => {
+const getRecipes = async (req, res) => {
+  const dietType = req.body.dietTypeFilter;
+  const mealCategory = req.body.mealCategoryFilter;
+
   const recipes = await Recipe.find({
-    dietType: dietTypeFilter,
-    mealCategory: mealCategoryFilter,
+    dietType: dietType,
+    mealCategory: mealCategory,
   })
 
   if (!recipes) {

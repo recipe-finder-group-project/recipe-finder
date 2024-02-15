@@ -17,7 +17,7 @@ const router = express.Router()
 router.get("/", getAllRecipes)
 
 // GET 1 category recipes
-router.get("/:filter", getRecipes)
+router.get("/search", getRecipes)
 
 // GET a single recipe
 router.get("/search/:id", getRecipe)
