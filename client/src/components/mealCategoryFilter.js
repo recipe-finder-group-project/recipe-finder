@@ -6,11 +6,11 @@ const mealCategoryFilter = ({ type, onSelect }) => {
   };
 
   return (
-    <div>
-      <button onClick={() => handleOptionSelect('Snack')}>Snack</button>
-      <button onClick={() => handleOptionSelect('Breakfast')}>Breakfast</button>
-      <button onClick={() => handleOptionSelect('Lunch')}>Lunch</button>
-      <button onClick={() => handleOptionSelect('Dinner')}>Dinner</button>
+    <div className="buttons-container">
+      <button className='button' onClick={() => handleOptionSelect('Snack')}>Snack</button>
+      <button className='button' onClick={() => handleOptionSelect('Breakfast')}>Breakfast</button>
+      <button className='button' onClick={() => handleOptionSelect('Lunch')}>Lunch</button>
+      <button className='button' onClick={() => handleOptionSelect('Dinner')}>Dinner</button>
     </div>
   );
 };
