@@ -6,10 +6,10 @@ const dietTypeFilter = ({ onSelect }) => {
   };
 
   return (
-    <div>
-      <button onClick={() => handleOptionSelect('Vegan')}>Vegan</button>
-      <button onClick={() => handleOptionSelect('Vegetarian')}>Vegetarian</button>
-      <button onClick={() => handleOptionSelect('Mediterranean')}>Mediterranean</button>
+    <div className="buttons-container">
+      <button className='button' onClick={() => handleOptionSelect('Vegan')}>Vegan</button>
+      <button className='button' onClick={() => handleOptionSelect('Vegetarian')}>Vegetarian</button>
+      <button className='button' onClick={() => handleOptionSelect('Mediterranean')}>Mediterranean</button>
     </div>
   );
 };

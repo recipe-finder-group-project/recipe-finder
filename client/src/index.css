@@ -49,3 +49,33 @@ header a {
   padding: 10px;
   margin-bottom: 10px;
 }
+
+
+.button {
+  padding: 10px 20px;
+  background-color: rgb(97, 97, 97);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:active {
+  background-color: rgb(37, 37, 37);
+}
+
+.buttons-container {
+  display: flex;
+  justify-content:left;
+  padding: 5px;
+}
+
+.buttons-container > * {
+  margin-right: 10px; /* Adjust the spacing as needed */
+}
+
+/* Remove the right margin from the last element to prevent extra spacing */
+.buttons-container > *:last-child {
+  margin-right: 0;
+}

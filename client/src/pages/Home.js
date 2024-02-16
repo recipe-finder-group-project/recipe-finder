@@ -1,27 +1,34 @@
-import React, { useState, useEffect } from "react"
-import RecipeCard from "../components/Recipe"
-import DietTypeFilter from "../components/dietTypeFilter"
-import MealCategoryFilter from "../components/mealCategoryFilter"
+import React, { useState, useEffect } from "react";
+import RecipeCard from "../components/Recipe";
+import DietTypeFilter from "../components/dietTypeFilter";
+import MealCategoryFilter from "../components/mealCategoryFilter";
 
 const Home = () => {
-  const [mainFilter, setMainFilter] = useState(null)
-  const [subFilter, setSubFilter] = useState(null)
-  const [recipes, setRecipes] = useState(null)
-  const [isLoading, setIsLoading] = useState(true)
+  const [mainFilter, setMainFilter] = useState(null);
+  const [subFilter, setSubFilter] = useState(null);
+  const [recipes, setRecipes] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleMainFilterSelect = (filter) => {
-    setMainFilter(filter)
-  }
+    setMainFilter(filter);
+  };
 
   const handleSubFilterSelect = (type, filter) => {
-    setSubFilter(filter)
-    sendRecipeRequest(mainFilter, subFilter)
-    console.log(`Main filter: ${mainFilter}, Sub filter: ${subFilter}`)
-  }
+    setSubFilter(filter);
+    // setIsLoading(true);
+  };
 
   useEffect(() => {
-    console.log(`Sub filter updated: ${subFilter}`)
-  }, [subFilter])
+    console.log(`Sub filter updated: ${subFilter}`);
+  }, [subFilter]);
+
+  useEffect(() => {
+    // Fetch recipes when mainFilter changes
+    if (mainFilter !== null && subFilter !== null) {
+      setIsLoading(true);
+      sendRecipeRequest(mainFilter, subFilter);
+    }
+  }, [mainFilter, subFilter]);
 
   const sendRecipeRequest = async (mainFilter, subFilter) => {
     try {
@@ -34,23 +41,20 @@ const Home = () => {
           dietTypeFilter: mainFilter,
           mealCategoryFilter: subFilter,
         }),
-      })
+      });
 
       if (!response.ok) {
-        throw new Error("Failed to fetch recipes")
+        throw new Error("Failed to fetch recipes");
       }
-
-      // Handle the response from the server if needed
-      const responseData = await response.json()
-      console.log(responseData)
-      setRecipes(responseData)
-      setIsLoading(false)
-
-      return responseData
+      const responseData = await response.json();
+      console.log(responseData);
+      setRecipes(responseData);
     } catch (error) {
-      console.error("Error fetching recipes:", error)
+      console.error("Error fetching recipes:", error);
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <div className="home">
@@ -61,9 +65,9 @@ const Home = () => {
           onSelect={handleSubFilterSelect}
         />
       )}
-      {isLoading ? <h1>Loading...</h1> : <RecipeCard recipes={recipes} />}
+      {isLoading ? <h1>Loading...</h1> : recipes && <RecipeCard recipes={recipes} />}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
