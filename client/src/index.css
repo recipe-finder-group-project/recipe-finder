@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
 /* layout */
 :root {
@@ -26,16 +26,56 @@ header a {
   color: #333;
   text-decoration: none;
 }
-.pages{
+.pages {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
 }
-
 
 .review-card {
   border: 2px solid black;
   padding: 10px;
   margin-bottom: 10px;
   width: 400px;
+}
+
+.recipeImage {
+  width: 200px;
+  height: 200px;
+}
+
+.recipes {
+  border: 2px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+.button {
+  padding: 10px 20px;
+  background-color: rgb(97, 97, 97);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:active {
+  background-color: rgb(37, 37, 37);
+}
+
+.buttons-container {
+  display: flex;
+  justify-content:left;
+  padding: 5px;
+}
+
+.buttons-container > * {
+  margin-right: 10px; /* Adjust the spacing as needed */
+}
+
+/* Remove the right margin from the last element to prevent extra spacing */
+.buttons-container > *:last-child {
+  margin-right: 0;
 }

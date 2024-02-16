@@ -27,7 +27,6 @@ individual dietary plans. The app aims to make meal planning more accessible, pe
 ## Authors
 
 - [@Kiril Talalaiko](https://github.com/ervette)
-- [@Adrian Nykiel](https://github.com/adrian9211)
 - [@Adrian Leontescu](https://github.com/Ady119)
 - [@Stefania Annunziata]()
 - [@Mykyta Oleksenko](https://github.com/mykytaoleksenko)

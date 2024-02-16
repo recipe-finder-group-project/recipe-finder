@@ -1,29 +1,34 @@
 const Recipe = require("../models/recipeModel")
 const mongoose = require("mongoose")
 
-//get all recipes
-const getRecipes = async (req, res) => {
+//get all recipes p.s/ dont use it overloads system.
+const getAllRecipes = async (req, res) => {
   const recipes = await Recipe.find({}).sort({ createdAt: -1 })
 
   res.status(200).json(recipes)
 }
 
-// get a single recipe by id
-/// later on i will change it to the name for convenience
-const getRecipe = async (req, res) => {
-  const { id } = req.params
+//fetching recipes using react hooks
+// route is: react subfilter button POST (returns @mealCategory & @dietType ->
+// server/api/recipes/search (@parameters mealCategory * dietType) -> 
+// MongoDB fetching the recipes by filters mentioned above ->
+// react component assembles json response data
+const getRecipes = async (req, res) => {
+  const dietType = req.body.dietTypeFilter;
+  const mealCategory = req.body.mealCategoryFilter;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: "No such recipe" })
+  const recipes = await Recipe.find({
+    dietType: dietType,
+    mealCategory: mealCategory,
+  })
+
+  if (!recipes) {
+    return res
+      .status(404)
+      .json({ error: "No recipes find for desired category" })
   }
 
-  const recipe = await Recipe.findById(id)
-
-  if (!recipe) {
-    return res.status(404).json({ error: "No such recipe" })
-  }
-
-  res.status(200).json(recipe)
+  return res.status(200).json(recipes)
 }
 
 //create new recipe
@@ -33,6 +38,7 @@ const createRecipe = async (req, res) => {
     dietType,
     mealCategory,
     preparationTime,
+    preparation,
     difficulty,
     ingredients,
     reviews,
@@ -45,6 +51,7 @@ const createRecipe = async (req, res) => {
       dietType,
       mealCategory,
       preparationTime,
+      preparation,
       difficulty,
       ingredients,
       reviews,
@@ -95,9 +102,9 @@ const updateRecipe = async (req, res) => {
 }
 
 module.exports = {
-  getRecipes,
-  getRecipe,
+  getAllRecipes,
   createRecipe,
   deleteRecipe,
   updateRecipe,
+  getRecipes,
 }

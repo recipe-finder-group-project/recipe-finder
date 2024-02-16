@@ -1,1 +1,1 @@
-export const host = "https://recipe-finder-server-f153.onrender.com";
+export const host = "https://recipe-finder-server-xgd5.onrender.com";

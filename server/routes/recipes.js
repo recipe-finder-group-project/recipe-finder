@@ -1,19 +1,19 @@
 const express = require("express")
 const {
-    getRecipes,
-    getRecipe,
+    getAllRecipes,
     createRecipe,
     deleteRecipe,
-    updateRecipe
+    updateRecipe,
+    getRecipes,
 } = require('../controllers/recipeController')
 
 const router = express.Router()
 
 // GET all recipes
-router.get("/", getRecipes)
+router.get("/", getAllRecipes)
 
-// GET a single recipe
-router.get("/:id", getRecipe)
+// GET 1 category recipes
+router.post("/search", getRecipes)
 
 // POST a new recipe
 router.post("/", createRecipe)
