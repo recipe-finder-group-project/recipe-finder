@@ -6,6 +6,8 @@ import MealCategoryFilter from "../components/mealCategoryFilter"
 const Home = () => {
   const [mainFilter, setMainFilter] = useState(null)
   const [subFilter, setSubFilter] = useState(null)
+  const [recipes, setRecipes] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
 
   const handleMainFilterSelect = (filter) => {
     setMainFilter(filter)
@@ -13,9 +15,7 @@ const Home = () => {
 
   const handleSubFilterSelect = (type, filter) => {
     setSubFilter(filter)
-    // Save the filters and transfer to other screen
-    // For now, just log the selected filters
-    sendRecipeRequest();
+    sendRecipeRequest(mainFilter, subFilter)
     console.log(`Main filter: ${mainFilter}, Sub filter: ${subFilter}`)
   }
 
@@ -25,11 +25,10 @@ const Home = () => {
 
   const sendRecipeRequest = async (mainFilter, subFilter) => {
     try {
-      const response = await fetch("https://localhost:5050/api/recipes/search", {
+      const response = await fetch("http://localhost:5050/api/recipes/search", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Add any other headers you may need, such as authorization tokens
         },
         body: JSON.stringify({
           dietTypeFilter: mainFilter,
@@ -38,14 +37,18 @@ const Home = () => {
       })
 
       if (!response.ok) {
-        throw new Error("Failed to save user data")
+        throw new Error("Failed to fetch recipes")
       }
 
       // Handle the response from the server if needed
       const responseData = await response.json()
-      return responseData;
+      console.log(responseData)
+      setRecipes(responseData)
+      setIsLoading(false)
+
+      return responseData
     } catch (error) {
-      console.error("Error saving user data:", error)
+      console.error("Error fetching recipes:", error)
     }
   }
 
@@ -58,7 +61,7 @@ const Home = () => {
           onSelect={handleSubFilterSelect}
         />
       )}
-      <RecipeCard />
+      {isLoading ? <h1>Loading...</h1> : <RecipeCard recipes={recipes} />}
     </div>
   )
 }

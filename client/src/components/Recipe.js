@@ -1,32 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import ReviewCard from "../components/ReviewCard"
 import "../index.css"
 
-const RecipeCard = () => {
-  const [recipes, setRecipes] = useState(null)
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      const response = await fetch(
-        "http://localhost:5050/api/recipes/vegetariansnack"
-      )
-      const json = await response.json()
-
-      if (response.ok) {
-        setRecipes(json)
-      }
-      setIsLoading(false)
-    }
-    fetchRecipes()
-  }, [])
-
+const RecipeCard = ({recipes}) => {
   return (
     <div className="recipe">
-      {isLoading ? (
-        <h1> Loading... </h1>
-      ) : (
-        recipes.map((recipe) => (
+        {recipes.map((recipe) => (
           <React.Fragment key={recipe._id}>
             <div className="recipes">
             <h2>{recipe.name}</h2>
@@ -61,9 +40,9 @@ const RecipeCard = () => {
             </div>
           </React.Fragment>
         ))
-      )}
+      }
     </div>
   )
 }
 
-export default RecipeCard
+export default RecipeCard;
