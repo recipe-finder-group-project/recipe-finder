@@ -1,5 +1,6 @@
 /* google font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Namdhinggo:wght@400;500;600;700;800&display=swap");
 
 /* layout */
 :root {
@@ -7,13 +8,18 @@
   --error: #e7195a;
 }
 body {
-  background: #f1f1f1;
   margin: 0;
   font-family: "Poppins";
+  color: #ffffff !important; 
+  background-color: #1c1c1c !important;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  padding-top: 70px;
 }
 header {
-  background: #fff;
+  background: #1c1c1c; /* Set background color */
 }
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -50,7 +56,6 @@ header a {
   margin-bottom: 10px;
 }
 
-
 .button {
   padding: 10px 20px;
   background-color: rgb(97, 97, 97);
@@ -61,21 +66,67 @@ header a {
   transition: background-color 0.3s ease;
 }
 
-.button:active {
-  background-color: rgb(37, 37, 37);
+.button:hover {
+  background-color: rgb(18, 18, 18);
 }
 
 .buttons-container {
   display: flex;
-  justify-content:left;
+  justify-content: left;
   padding: 5px;
 }
 
 .buttons-container > * {
-  margin-right: 10px; /* Adjust the spacing as needed */
+  margin-right: 10px;
 }
 
-/* Remove the right margin from the last element to prevent extra spacing */
 .buttons-container > *:last-child {
   margin-right: 0;
+}
+
+.gradient-text {
+  font-size: 50px;
+  background: linear-gradient(90deg, #89e790, #f4d06a, #ff5c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Namdhinggo";
+  padding-left: 20px;
+}
+
+.rounded-pill {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.login-button,
+.logout-button {
+  background-color: #f4d06a;
+  color: #222222;
+  border: none;
+  border-radius: 20px; /* Adjust the value to make it more or less round */
+  padding: 8px 16px;
+  cursor: pointer;
+  width: 115px;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover{
+  background-color: #89e790;
+}
+.logout-button:hover{
+  background-color: #e65454;
+}
+
+.links-text{
+  color: #ffffff !important;
+  background-color: transparent;
+  cursor: pointer !important;
+  transition: color 0.5s ease !important;
+}
+
+.links-text:hover{
+  color: #89E790 !important;
 }
