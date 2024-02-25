@@ -47,7 +47,7 @@
     color: black;
 }
 
-.btn:focus{
+.btn:active{
     background-color: #F4D06A !important;
 }
 
