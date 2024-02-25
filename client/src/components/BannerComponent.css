@@ -1,0 +1,80 @@
+.container-fluid {
+  overflow: hidden; /* Prevents overflow from the rounded corners */
+}
+
+.card,
+.btn,
+.carousel {
+  border-radius: 15px !important; /* Applies rounded corners */
+}
+.card,
+.btn {
+  height: 200px;
+}
+.btn {
+  margin-top: 5px;
+}
+
+.btn-gap {
+  margin-right: 5px; /* Add margin between buttons */
+}
+
+/* Ensure the last button doesn't have a right margin */
+.btn-gap:last-child {
+  margin-right: 0;
+}
+
+.card {
+    background-color: #D86631;
+    color: white;
+}
+
+.btn-start {
+    background-color: #89E790;
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.btn-arrow {
+    background-color: #F0E8DE;
+    color: black;
+    font-size: 80px;
+}
+
+.btn:hover {
+    background-color: #F4D06A;
+    color: black;
+}
+
+.carousel-container .carousel-item img {
+  object-fit: cover;
+  height: 400px; /* Ensures the carousel images fit without altering the container's size */
+  padding-left: 5px;
+  border-radius: 15px !important;
+}
+
+/* Ensure the carousel container doesn't resize */
+.carousel-container {
+  overflow: hidden;
+  height: 400px; /* Static height */
+  border-radius: 15px !important;
+}
+
+.text-formation {
+  padding-top: 20px;
+  padding-left: 5px;
+  font-size: 14px;
+  text-align: left !important;
+  line-height: 0.1px;
+  font-weight: 250;
+}
+
+.title-text {
+  font-size: 42px;
+  padding-top: 20px;
+  padding-left: 5px;
+  text-align: left !important;
+  line-height: 0.3;
+  font-weight: 400;
+}
