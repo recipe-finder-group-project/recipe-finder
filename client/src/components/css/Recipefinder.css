@@ -1,0 +1,47 @@
+.main-container {
+  margin-top: 70px;
+  background-color: #f0e8de;
+  border-radius: 15px;
+}
+
+.contents {
+  padding-top: 25px;
+}
+
+.title {
+  color: black;
+  padding-left: 25px;
+  font-weight: 450;
+  font-size: 55px;
+}
+
+.button {
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 2px solid #ff5c00;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ff5c00;
+}
+
+.buttons-container {
+  display: list-item;
+  justify-content: left;
+  padding: 5px;
+  padding-left: 25px;
+  padding-top: 10px;
+}
+
+.buttons-container > * {
+  margin-right: 10px;
+}
+
+.buttons-container > *:last-child {
+  margin-right: 0;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import "./css/Recipefinder.css"
 
 const mealCategoryFilter = ({ type, onSelect }) => {
   const handleOptionSelect = (option) => {
