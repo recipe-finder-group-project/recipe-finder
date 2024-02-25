@@ -52,7 +52,7 @@ const BannerComponent = () => {
               alt="Vegan Lunches"
             />
             <Carousel.Caption>
-              <h2 style={{ textAlign: "left" }}>Vegan Lunches</h2>
+              <h2 style={{ textAlign: "left" }}>Vegan Creations</h2>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -62,7 +62,7 @@ const BannerComponent = () => {
               alt="Mediterranean Creations"
             />
             <Carousel.Caption>
-              <h2 style={{ textAlign: "left" }}>Mediterranean Creations</h2>
+              <h2 style={{ textAlign: "left" }}>Mediterranean Marvels</h2>
             </Carousel.Caption>
           </Carousel.Item>
 
