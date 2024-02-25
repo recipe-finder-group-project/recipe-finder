@@ -3,7 +3,7 @@ import { Button, Card, Carousel } from "react-bootstrap"
 import mediimage from "../images/medi-lunch.png"
 import veganimage from "../images/vegan-lunch.png"
 import veggieimage from "../images/veggie-lunch.png"
-import "./BannerComponent.css" // Make sure your CSS file is named accordingly
+import "./css/BannerComponent.css" // Make sure your CSS file is named accordingly
 
 const BannerComponent = () => {
   return (
@@ -13,10 +13,12 @@ const BannerComponent = () => {
         style={{ flex: "1" }}
       >
         <Card className="rounded-15" style={{ flexGrow: "1" }}>
-          <Card.Body className="d-flex flex-column">
-            <Card.Title className="title-text">Healthy Food</Card.Title>
-            <Card.Title className="title-text">Recipe Finder</Card.Title>
-            <div style={{paddingTop:"10px"}}>
+          <Card.Body className="d-flex flex-column" style={{paddingLeft: "25px"}}>
+            <div style={{paddingTop: "12px"}}>
+              <Card.Title className="title-text">Healthy Food</Card.Title>
+              <Card.Title className="title-text">Recipe Finder</Card.Title>
+            </div>
+            <div style={{ paddingTop: "16px" }}>
               <Card.Subtitle className="text-formation">
                 Welcome to Recipe
               </Card.Subtitle>
@@ -36,10 +38,7 @@ const BannerComponent = () => {
           >
             Start Now
           </Button>
-          <Button
-            className="rounded-15 btn-arrow"
-            style={{ width: "50%" }}
-          >
+          <Button className="rounded-15 btn-arrow" style={{ width: "50%" }}>
             ↙
           </Button>
         </div>

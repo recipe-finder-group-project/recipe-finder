@@ -66,19 +66,15 @@
 }
 
 .text-formation {
-  padding-top: 20px;
-  padding-left: 5px;
-  font-size: 14px;
+  font-size: 11px;
   text-align: left !important;
-  line-height: 0.1px;
+  line-height: 1.35;
   font-weight: 250;
 }
 
 .title-text {
-  font-size: 42px;
-  padding-top: 20px;
-  padding-left: 5px;
+  font-size: 50px;
   text-align: left !important;
-  line-height: 0.3;
+  line-height: 0.75;
   font-weight: 400;
 }
