@@ -47,6 +47,10 @@
     color: black;
 }
 
+.btn:focus{
+    background-color: #F4D06A !important;
+}
+
 .carousel-container .carousel-item img {
   object-fit: cover;
   height: 400px; /* Ensures the carousel images fit without altering the container's size */
