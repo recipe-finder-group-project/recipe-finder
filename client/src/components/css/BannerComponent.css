@@ -31,20 +31,20 @@
 
 .btn-start {
     background-color: #89E790;
-    color: black;
+    color: #222222;
     font-size: 25px;
     font-weight: 500;
 }
 
 .btn-arrow {
     background-color: #F0E8DE;
-    color: black;
+    color: #222222;
     font-size: 80px;
 }
 
 .btn:hover {
     background-color: #F4D06A;
-    color: black;
+    color: #222222;
 }
 
 .btn:active{

@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-family: "Poppins";
-  color: #ffffff !important; 
+  color: #ffffff !important;
   background-color: #1c1c1c !important;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -36,52 +36,6 @@ header a {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
-}
-
-.review-card {
-  border: 2px solid black;
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 400px;
-}
-
-.recipeImage {
-  width: 200px;
-  height: 200px;
-}
-
-.recipes {
-  border: 2px solid black;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.button {
-  padding: 10px 20px;
-  background-color: rgb(97, 97, 97);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: rgb(18, 18, 18);
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: left;
-  padding: 5px;
-}
-
-.buttons-container > * {
-  margin-right: 10px;
-}
-
-.buttons-container > *:last-child {
-  margin-right: 0;
 }
 
 .gradient-text {
@@ -113,20 +67,20 @@ header a {
   transition: background-color 0.3s ease;
 }
 
-.login-button:hover{
+.login-button:hover {
   background-color: #89e790;
 }
-.logout-button:hover{
+.logout-button:hover {
   background-color: #e65454;
 }
 
-.links-text{
+.links-text {
   color: #ffffff !important;
   background-color: transparent;
   cursor: pointer !important;
   transition: color 0.3s ease !important;
 }
 
-.links-text:hover{
-  color: #89E790 !important;
+.links-text:hover {
+  color: #89e790 !important;
 }

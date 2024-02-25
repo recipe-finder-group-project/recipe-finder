@@ -1,11 +1,27 @@
-import React from "react"
+// Banner.js
+import React, { useRef } from "react"
 import { Button, Card, Carousel } from "react-bootstrap"
 import mediimage from "../images/medi-lunch.png"
 import veganimage from "../images/vegan-lunch.png"
 import veggieimage from "../images/veggie-lunch.png"
-import "./css/BannerComponent.css" // Make sure your CSS file is named accordingly
+import "./css/BannerComponent.css"
 
 const BannerComponent = () => {
+  const recipefinderRef = useRef()
+
+  const scrollToRecipeFinder = () => {
+    const navbarHeight = 95
+    const windowHeight = window.innerHeight
+    const mainContainerTop = document.querySelector(".main-container").offsetTop
+
+    const scrollPosition = mainContainerTop - navbarHeight
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <div className="container-fluid p-0 d-flex" style={{ height: "400px" }}>
       <div
@@ -13,8 +29,11 @@ const BannerComponent = () => {
         style={{ flex: "1" }}
       >
         <Card className="rounded-15" style={{ flexGrow: "1" }}>
-          <Card.Body className="d-flex flex-column" style={{paddingLeft: "25px"}}>
-            <div style={{paddingTop: "12px"}}>
+          <Card.Body
+            className="d-flex flex-column"
+            style={{ paddingLeft: "25px" }}
+          >
+            <div style={{ paddingTop: "12px" }}>
               <Card.Title className="title-text">Healthy Food</Card.Title>
               <Card.Title className="title-text">Recipe Finder</Card.Title>
             </div>
@@ -35,15 +54,24 @@ const BannerComponent = () => {
           <Button
             className="rounded-15 btn-gap btn-start"
             style={{ width: "50%" }}
+            onClick={scrollToRecipeFinder}
           >
             Start Now
           </Button>
-          <Button className="rounded-15 btn-arrow" style={{ width: "50%" }}>
+          <Button
+            className="rounded-15 btn-arrow"
+            style={{ width: "50%" }}
+            onClick={scrollToRecipeFinder}
+          >
             ↙
           </Button>
         </div>
       </div>
-      <div className="carousel-container" style={{ flex: "1" }}>
+      <div
+        ref={recipefinderRef}
+        className="carousel-container"
+        style={{ flex: "1" }}
+      >
         <Carousel fade className="rounded-15 h-100">
           <Carousel.Item>
             <img

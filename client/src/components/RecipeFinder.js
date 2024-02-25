@@ -65,20 +65,22 @@ const RecipeFinder = () => {
           type={mainFilter}
           onSelect={handleSubFilterSelect}
         />
-        {isLoading ? (
-        <center>
-          <Spinner
-            style={{ marginTop: "50px" }}
-            animation="border"
-            role="status"
-            variant="warning"
-          >
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        </center>
-      ) : (
-        recipes && <RecipeCard recipes={recipes} />
-      )}
+        <div>
+          {isLoading ? (
+            <center>
+              <Spinner
+                style={{ marginTop: "50px" }}
+                animation="border"
+                role="status"
+                variant="warning"
+              >
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            </center>
+          ) : (
+            recipes && <RecipeCard recipes={recipes} />
+          )}
+        </div>
       </div>
     </div>
   )
