@@ -1,11 +1,26 @@
 import { Link } from "react-router-dom"
-import React from "react"
+import React, {useRef} from "react"
 import { Navbar, Nav } from "react-bootstrap"
 import LoginButton from "./LoginButton"
 import LogoutButton from "./LogoutButton"
 import "../index.css"
 
 const NavbarComponent = () => {
+  const recipefinderRef = useRef()
+
+  const scrollToRecipeFinder = () => {
+    const navbarHeight = 95
+    const windowHeight = window.innerHeight
+    const mainContainerTop = document.querySelector(".main-container").offsetTop
+
+    const scrollPosition = mainContainerTop - navbarHeight
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <Navbar
       className="rounded-pill d-flex justify-content-between align-items-center"
@@ -18,7 +33,7 @@ const NavbarComponent = () => {
     >
       <Navbar.Brand className="gradient-text">Healthy</Navbar.Brand>
       <Nav className="mr-auto justify-content-center">
-        <Nav.Link href="#" className="links-text">
+        <Nav.Link href="#" className="links-text" onClick={scrollToRecipeFinder}>
           Recipe Finder
         </Nav.Link>
         <Nav.Link href="#" className="links-text">
