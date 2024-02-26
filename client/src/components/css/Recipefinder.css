@@ -32,6 +32,10 @@
   background-color: #ff5c00;
 }
 
+.button-diet:focus {
+  background-color: #ff5c00;
+}
+
 .buttons-container {
   display: list-item;
   justify-content: left;
