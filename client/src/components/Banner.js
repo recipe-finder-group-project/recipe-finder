@@ -1,4 +1,3 @@
-// Banner.js
 import React, { useRef } from "react"
 import { Button, Card, Carousel } from "react-bootstrap"
 import mediimage from "../images/medi-lunch.png"
@@ -11,7 +10,6 @@ const BannerComponent = () => {
 
   const scrollToRecipeFinder = () => {
     const navbarHeight = 95
-    const windowHeight = window.innerHeight
     const mainContainerTop = document.querySelector(".main-container").offsetTop
 
     const scrollPosition = mainContainerTop - navbarHeight

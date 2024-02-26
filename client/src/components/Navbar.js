@@ -1,16 +1,14 @@
-import { Link } from "react-router-dom"
-import React, {useRef} from "react"
+// import { Link } from "react-router-dom"
+import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
 import LoginButton from "./LoginButton"
 import LogoutButton from "./LogoutButton"
 import "../index.css"
 
 const NavbarComponent = () => {
-  const recipefinderRef = useRef()
 
   const scrollToRecipeFinder = () => {
     const navbarHeight = 95
-    const windowHeight = window.innerHeight
     const mainContainerTop = document.querySelector(".main-container").offsetTop
 
     const scrollPosition = mainContainerTop - navbarHeight

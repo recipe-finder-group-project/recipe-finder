@@ -5,8 +5,8 @@ const RecipeCard = ({ recipes }) => {
   return (
     <div className="recipes-container">
       {recipes.map((recipe) => (
-        <React.Fragment key={recipe._id}>
-          <div className="recipe">
+        <div className="recipe" key={recipe._id}>
+          <div className="recipe-content">
             {recipe.image && (
               <img
                 className="recipeImage"
@@ -16,8 +16,8 @@ const RecipeCard = ({ recipes }) => {
                 alt={"afs"}
               />
             )}
-            <h2>{recipe.name}</h2>
-            <div>
+            <h2 className="recipe-name">{recipe.name}</h2>
+            <div className="info-bullets-container">
               <p className="info-bullets">{recipe.preparationTime} min</p>
               <p className="info-bullets">
                 {recipe.difficulty === 1 && (
@@ -47,7 +47,7 @@ const RecipeCard = ({ recipes }) => {
               </p>
             </div>
           </div>
-        </React.Fragment>
+        </div>
       ))}
     </div>
   );
