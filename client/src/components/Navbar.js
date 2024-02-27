@@ -84,7 +84,7 @@ const NavbarComponent = () => {
         </Nav.Link>
       </Nav>
       <div>
-        {isAuthenticated && <h1>{user.name}</h1>}
+        {isAuthenticated && <h1 style={{fontSize: "15px"}}>{user.name}</h1>}
         <LoginButton />
         <LogoutButton />
       </div>
