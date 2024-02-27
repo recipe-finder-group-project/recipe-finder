@@ -20,7 +20,7 @@ individual dietary plans. The app aims to make meal planning more accessible, pe
 
 **Client:** React
 
-**Server:** Node, Express, MongoDB, JavaScript
+**Server:** Node, Express, MongoDB, JavaScript, Auth0
 
 **Dependencies:** Mongoose, Nodemon, Bootstrap, React-bootstrap
 
@@ -30,6 +30,10 @@ individual dietary plans. The app aims to make meal planning more accessible, pe
 - [@Adrian Leontescu](https://github.com/Ady119)
 - [@Stefania Annunziata]()
 - [@Mykyta Oleksenko](https://github.com/mykytaoleksenko)
+
+## Visit the App on
+
+https://recipe-finder-client.onrender.com
 
 ## Deployment
 
