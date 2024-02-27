@@ -60,8 +60,8 @@
 }
 
 .recipeImage {
-  width: 100%;
-  height: fit-content;
+  width: 280px;
+  height: 280px;
   border-radius: 15px;
 }
 .recipes-container {
@@ -79,9 +79,19 @@
   margin-bottom: 20px;
   box-sizing: border-box;
   padding: 10px;
-  height: 400px;
+  height: 480px;
   min-width: 310px;
   position: relative;
+}
+
+.recipe:hover {
+  padding: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #f4d06a; /* Adjust the color and opacity as needed */
+  border-radius: 25px; /* Adjust as needed */
 }
 
 .info-bullets-container {

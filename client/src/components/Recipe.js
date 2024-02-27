@@ -18,7 +18,7 @@ const RecipeCard = ({ recipes }) => {
             )}
             <h2 className="recipe-name">{recipe.name}</h2>
             <div className="info-bullets-container">
-              <p className="info-bullets">{recipe.preparationTime} min</p>
+              <p className="info-bullets">{recipe.preparationTime} minutes</p>
               <p className="info-bullets">
                 {recipe.difficulty === 1 && (
                   <>
