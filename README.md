@@ -22,7 +22,7 @@ individual dietary plans. The app aims to make meal planning more accessible, pe
 
 **Server:** Node, Express, MongoDB, JavaScript, Auth0
 
-**Dependencies:** Mongoose, Nodemon, Dotenv
+**Dependencies:** Mongoose, Nodemon, Bootstrap, React-bootstrap
 
 ## Authors
 

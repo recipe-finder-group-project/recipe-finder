@@ -1,4 +1,5 @@
 import React from 'react';
+import "./css/Recipefinder.css"
 
 const mealCategoryFilter = ({ type, onSelect }) => {
   const handleOptionSelect = (option) => {
@@ -7,10 +8,10 @@ const mealCategoryFilter = ({ type, onSelect }) => {
 
   return (
     <div className="buttons-container">
-      <button className='button' onClick={() => handleOptionSelect('Snack')}>Snack</button>
-      <button className='button' onClick={() => handleOptionSelect('Breakfast')}>Breakfast</button>
-      <button className='button' onClick={() => handleOptionSelect('Lunch')}>Lunch</button>
-      <button className='button' onClick={() => handleOptionSelect('Dinner')}>Dinner</button>
+      <button className='button button-category' onClick={() => handleOptionSelect('Snack')}>Snack</button>
+      <button className='button button-category' onClick={() => handleOptionSelect('Breakfast')}>Breakfast</button>
+      <button className='button button-category' onClick={() => handleOptionSelect('Lunch')}>Lunch</button>
+      <button className='button button-category' onClick={() => handleOptionSelect('Dinner')}>Dinner</button>
     </div>
   );
 };

@@ -1,14 +1,12 @@
-import React from "react"
-import ReviewCard from "../components/ReviewCard"
-import "../index.css"
+import React from "react";
+import "./css/Recipefinder.css";
 
-const RecipeCard = ({recipes}) => {
+const RecipeCard = ({ recipes }) => {
   return (
-    <div className="recipe">
-        {recipes.map((recipe) => (
-          <React.Fragment key={recipe._id}>
-            <div className="recipes">
-            <h2>{recipe.name}</h2>
+    <div className="recipes-container">
+      {recipes.map((recipe) => (
+        <div className="recipe" key={recipe._id}>
+          <div className="recipe-content">
             {recipe.image && (
               <img
                 className="recipeImage"
@@ -18,31 +16,41 @@ const RecipeCard = ({recipes}) => {
                 alt={"afs"}
               />
             )}
-            <p>Diet Type - {recipe.dietType}</p>
-            <p>Meal Category - {recipe.mealCategory}</p>
-            <p>Preparation time - {recipe.preparationTime} min</p>
-            <p>Difficulty - {recipe.difficulty}*</p>
-            <p>Ingredients : </p>
-            <ul>
-              {recipe.ingredients.map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
-              ))}
-            </ul>
-            <p>Preparation : </p>
-            <ul>
-              {recipe.preparation.map((preparationStep, index) => (
-                <li key={index}>{preparationStep}</li>
-              ))}
-            </ul>
-            <div>
-              <ReviewCard reviews={recipe.reviews}></ReviewCard>
+            <h2 className="recipe-name">{recipe.name}</h2>
+            <div className="info-bullets-container">
+              <p className="info-bullets">{recipe.preparationTime} minutes</p>
+              <p className="info-bullets">
+                {recipe.difficulty === 1 && (
+                  <>
+                    <span>Easy - </span>
+                    {[...Array(recipe.difficulty)].map((_, index) => (
+                      <span key={index}>★</span>
+                    ))}
+                  </>
+                )}
+                {recipe.difficulty === 2 && (
+                  <>
+                    <span>Medium - </span>
+                    {[...Array(recipe.difficulty)].map((_, index) => (
+                      <span key={index}>★</span>
+                    ))}
+                  </>
+                )}
+                {recipe.difficulty === 3 && (
+                  <>
+                    <span>Hard - </span>
+                    {[...Array(recipe.difficulty)].map((_, index) => (
+                      <span key={index}>★</span>
+                    ))}
+                  </>
+                )}
+              </p>
             </div>
-            </div>
-          </React.Fragment>
-        ))
-      }
+          </div>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
 export default RecipeCard;

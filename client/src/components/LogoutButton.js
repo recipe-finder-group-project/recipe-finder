@@ -5,7 +5,7 @@ const LogoutButton = () => {
   const { logout, isAuthenticated } = useAuth0();
 
   return (
-    isAuthenticated && <button onClick={() => logout()}>Sign Out</button>
+    isAuthenticated && <button className="logout-button" onClick={() => logout()}>Sign Out</button>
   )
 }
 
