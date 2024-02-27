@@ -1,0 +1,132 @@
+.main-container {
+  margin-top: 90px;
+  background-color: #f0e8de;
+  border-radius: 15px;
+  min-height: 620px;
+}
+
+.contents {
+  padding-top: 25px;
+}
+
+.title {
+  color: #222222;
+  padding-left: 25px;
+  font-weight: 450;
+  font-size: 55px;
+}
+
+.button {
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 2px solid #ff5c00;
+  color: #222222;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-diet:hover,
+.button-category:hover {
+  background-color: #ff5c00;
+}
+
+.button-diet:focus {
+  background-color: #ff5c00;
+}
+
+.buttons-container {
+  display: list-item;
+  justify-content: left;
+  padding: 5px;
+  padding-left: 25px;
+  padding-top: 10px;
+}
+
+.buttons-container > * {
+  margin-right: 10px;
+}
+
+.buttons-container > *:last-child {
+  margin-right: 0;
+}
+
+.review-card {
+  border: 2px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 400px;
+}
+
+.recipeImage {
+  width: 280px;
+  height: 280px;
+  border-radius: 15px;
+}
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to the left */
+  gap: 5px; /* Add 5px gaps between all the cards */
+  margin-top: 10px;
+  margin: 30px 35px;
+  color: #222222;
+}
+
+.recipe {
+  width: calc(25% - 20px);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 480px;
+  min-width: 310px;
+  position: relative;
+}
+
+.recipe:hover {
+  padding: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #f4d06a; /* Adjust the color and opacity as needed */
+  border-radius: 25px; /* Adjust as needed */
+}
+
+.info-bullets-container {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.info-bullets-container > * {
+  margin-right: 10px;
+}
+
+.info-bullets-container > *:last-child {
+  margin-right: 0;
+}
+
+.info-bullets {
+  border-radius: 30px;
+  color: #222222;
+  background-color: #f4d06a;
+  text-align: center;
+  padding-top: 4px;
+  font-size: 16px;
+  height: 35px;
+  font-weight: 400;
+  min-width: 130px;
+  margin-bottom: auto;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.recipe-name {
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: 300;
+}
