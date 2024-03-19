@@ -1,5 +1,7 @@
-import React from "react";
-import "./css/Recipefinder.css";
+import React from "react"
+import "./css/Recipefinder.css"
+import SaveRecipeButton from "./SaveRecipeButton"
+import LearnMoreButton from "./LearnMoreButton"
 
 const RecipeCard = ({ recipes }) => {
   return (
@@ -17,6 +19,10 @@ const RecipeCard = ({ recipes }) => {
               />
             )}
             <h2 className="recipe-name">{recipe.name}</h2>
+
+            {/* <SaveRecipeButton /> */}
+            <LearnMoreButton/>
+
             <div className="info-bullets-container">
               <p className="info-bullets">{recipe.preparationTime} minutes</p>
               <p className="info-bullets">
@@ -50,7 +56,7 @@ const RecipeCard = ({ recipes }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default RecipeCard;
+export default RecipeCard

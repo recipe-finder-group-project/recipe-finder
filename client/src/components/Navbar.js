@@ -19,12 +19,11 @@ const NavbarComponent = () => {
   const sendDataToBackend = async (userData) => {
     try {
       const response = await fetch(
-        "https://recipe-finder-server-xgd5.onrender.com/save-user-data",
+        "http://localhost:5050/save-user-data",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            // Add any other headers you may need, such as authorization tokens
           },
           body: JSON.stringify({
             name: userData.name,
@@ -37,7 +36,7 @@ const NavbarComponent = () => {
         throw new Error("Failed to save user data")
       }
 
-      // Handle the response from the server if needed
+
       const responseData = await response.json()
       console.log("User data saved successfully", responseData)
     } catch (error) {
@@ -82,9 +81,14 @@ const NavbarComponent = () => {
         <Nav.Link href="#" className="links-text">
           Contacts
         </Nav.Link>
+        {isAuthenticated && (
+          <Nav.Link href="#" className="links-text">
+            Saved Recipes
+          </Nav.Link>
+        )}
       </Nav>
+      {isAuthenticated && <h1 style={{fontSize: "15px", marginTop: "9px"}}>{user.name}</h1>}
       <div>
-        {isAuthenticated && <h1>{user.name}</h1>}
         <LoginButton />
         <LogoutButton />
       </div>
