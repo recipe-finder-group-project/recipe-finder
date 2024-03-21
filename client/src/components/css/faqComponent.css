@@ -1,0 +1,81 @@
+.faq-container {
+    height: 800px; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent; /* Assuming a dark background */
+    color: white; /* White text */
+    padding-right: 55px;
+    margin-top: 80px;
+  }
+  
+  .faq-row {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .faq-top-row {
+    justify-content: flex-start;
+  }
+  
+  .faq-middle-row {
+    justify-content: flex-end;
+  }
+  
+  .faq-bottom-row {
+    justify-content: center;
+  }
+  
+  .faq-option {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .btn-faq {
+    display: block;
+    height: 200px;
+    width: 300px;
+    padding: 1rem;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .btn-faq-orange {
+    background-color: #FF5C00;
+    color: white;
+  }
+  
+  .btn-faq-yellow {
+    background-color: #f4D06A;
+  }
+  
+  .btn-faq-green {
+    background-color: #89E790;
+  }
+  
+  .title-text {
+    font-size: 34px;
+    line-height: 10px;
+  }
+
+  .info-faq-text {
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+    line-height: 13px;
+  }
+  
+  .text-container {
+    margin-top: 15px;
+  }
+
+  .svg-image {
+    height: 65px;
+    width: 65px;
+    border-radius: 100%;
+    display: block;
+  }
