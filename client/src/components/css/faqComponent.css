@@ -77,6 +77,16 @@
   background-color: #89e790;
 }
 
+@media (max-width: 1398px) {
+  .faq-middle-row{
+    display:flex;
+    justify-content: center;
+  }
+  .faq-header{
+    opacity: 0%;
+  }
+}
+
 .title-text {
   font-size: 34px;
   line-height: 15px !important;

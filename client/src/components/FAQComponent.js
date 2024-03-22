@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Container, Row, Col, Card } from "react-bootstrap"
 import "./css/faqComponent.css"
 import searchDietCat from "../images/searchDietCat.svg"
@@ -6,15 +6,30 @@ import selectMealType from "../images/selectMealType.svg"
 import discAndSave from "../images/discAndSave.svg"
 
 const FAQComponent = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   return (
     <Container fluid className="faq-container">
-      <div className="faq-header">
-        <h1 className="faq-title-explanation">Right diet</h1>
-        <h1 className="faq-title-explanation">Right mind</h1>
-        <h2 className="faq-subtitle-explanation">Discover Speedy Gourmet</h2>
-        <h2 className="faq-subtitle-explanation">30-Minute Meals for Busy Lives</h2>
-        
+      {!isMobile && (
+        <div className="faq-header">
+          <h1 className="faq-title-explanation">Right diet</h1>
+          <h1 className="faq-title-explanation">Right mind</h1>
+          <h2 className="faq-subtitle-explanation">Discover Speedy Gourmet</h2>
+          <h2 className="faq-subtitle-explanation">
+            30-Minute Meals for Busy Lives
+          </h2>
         </div>
+      )}
+
       <Row className="faq-row faq-top-row align-items-start">
         <Col md={4} className="faq-option">
           <Card className="btn-faq btn-faq-orange">

@@ -6,7 +6,7 @@ import './index.css'
 //pages & components
 import Home from "./pages/Home"
 import NavbarComponent from "./components/Navbar"
-import Profile from "./components/Profile"
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   )

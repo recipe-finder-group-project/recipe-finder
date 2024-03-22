@@ -1,0 +1,28 @@
+.my-component h1,
+.my-component h2,
+.my-component h3 {
+  font-weight: bold;
+}
+
+.bg-black {
+  background-color: #000; /* Replace with the exact black shade used */
+}
+
+.bg-orange {
+  background-color: #ffa500; /* Replace with the exact orange shade used */
+}
+
+.bg-olive {
+  background-color: #808000; /* Replace with the exact olive shade used */
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-footer img {
+  margin-right: 10px;
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+}
