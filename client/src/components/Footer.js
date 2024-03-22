@@ -12,7 +12,7 @@ const Footer = () => {
         </div>
         <div className="col-md-6 p-5 bg-orange">
           <h2>What people says</h2>
-          <div className="testimonial bg-light p-3">
+          <div className="testimonial bg-dark p-3">
             <p>Absolutely love this app! The "Craft Your Culinary Story" feature has transformed my meal planning. It's so easy to find inspiring recipes for any meal type, and the energizing breakfast options are my favorite. A game-changer for busy foodies!</p>
             <div className="testimonial-footer">
               <img src="path-to-kian-graham-image.jpg" alt="Kian Graham" className="rounded-circle"/>
