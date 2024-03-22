@@ -1,5 +1,5 @@
 .main-container {
-  margin-top: 90px;
+  margin-top: 70px;
   background-color: #f0e8de;
   border-radius: 15px;
   min-height: 620px;
@@ -19,29 +19,22 @@
 .button {
   font-size: 14px;
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 100px;
   background-color: transparent;
   border: 2px solid #ff5c00;
   color: #222222;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.button-diet:hover,
-.button-category:hover {
-  background-color: #ff5c00;
-}
-
-.button-diet:focus {
-  background-color: #ff5c00;
+  font-weight: 500;
+  height: 45px;
+  
 }
 
 .buttons-container {
-  display: list-item;
+  /* display: list-item; */
+  display:flow-root;
   justify-content: left;
-  padding: 5px;
   padding-left: 25px;
-  padding-top: 10px;
 }
 
 .buttons-container > * {
@@ -49,8 +42,22 @@
 }
 
 .buttons-container > *:last-child {
-  margin-right: 0;
+  margin-right: 10px;
 }
+
+.btn-orange {
+  background-color: #ff5c00 !important;
+  border-color: #ff5c00 !important;
+}
+
+.btn-outline-orange {
+  border-color: #ff5c00 !important;
+}
+
+.btn-outline-orange:hover {
+  background-color: #ff5c00 !important;
+}
+
 
 .review-card {
   border: 2px solid black;

@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ButtonGroup, Button } from 'react-bootstrap';
 
-const dietTypeFilter = ({ onSelect }) => {
+const DietTypeFilter = ({ onSelect }) => {
+  const [selectedDiet, setSelectedDiet] = useState('');
+
   const handleOptionSelect = (option) => {
+    setSelectedDiet(option);
     onSelect(option);
   };
 
   return (
-    <div className="buttons-container">
-      <button className='button button-diet' onClick={() => handleOptionSelect('Vegan')}>Vegan</button>
-      <button className='button button-diet' onClick={() => handleOptionSelect('Vegetarian')}>Vegetarian</button>
-      <button className='button button-diet' onClick={() => handleOptionSelect('Mediterranean')}>Mediterranean</button>
-    </div>
+    <ButtonGroup className="mb-2 buttons-container">
+      {['Vegan', 'Vegetarian', 'Mediterranean'].map((diet) => (
+        <Button
+        className='button button-diet'
+          key={diet}
+          variant={selectedDiet === diet ? 'orange' : 'outline-orange'}
+          onClick={() => handleOptionSelect(diet)}
+        >
+          {diet}
+        </Button>
+      ))}
+    </ButtonGroup>
   );
 };
 
-export default dietTypeFilter;
+export default DietTypeFilter;

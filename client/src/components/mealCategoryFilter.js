@@ -1,19 +1,28 @@
-import React from 'react';
-import "./css/Recipefinder.css"
+import React, { useState } from 'react';
+import { ButtonGroup, Button } from 'react-bootstrap';
 
-const mealCategoryFilter = ({ type, onSelect }) => {
+const MealCategoryFilter = ({ type, onSelect }) => {
+  const [selectedMeal, setSelectedMeal] = useState('');
+
   const handleOptionSelect = (option) => {
+    setSelectedMeal(option);
     onSelect(type, option);
   };
 
   return (
-    <div className="buttons-container">
-      <button className='button button-category' onClick={() => handleOptionSelect('Snack')}>Snack</button>
-      <button className='button button-category' onClick={() => handleOptionSelect('Breakfast')}>Breakfast</button>
-      <button className='button button-category' onClick={() => handleOptionSelect('Lunch')}>Lunch</button>
-      <button className='button button-category' onClick={() => handleOptionSelect('Dinner')}>Dinner</button>
-    </div>
+    <ButtonGroup className="mb-2 buttons-container">
+      {['Snack', 'Breakfast', 'Lunch', 'Dinner'].map((meal) => (
+        <Button
+        className='button button-category'
+          key={meal}
+          variant={selectedMeal === meal ? 'orange' : 'outline-orange'}
+          onClick={() => handleOptionSelect(meal)}
+        >
+          {meal}
+        </Button>
+      ))}
+    </ButtonGroup>
   );
 };
 
-export default mealCategoryFilter;
+export default MealCategoryFilter;
