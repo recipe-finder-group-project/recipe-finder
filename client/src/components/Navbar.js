@@ -4,7 +4,6 @@ import { useAuth0 } from "@auth0/auth0-react"
 import { Navbar, Nav } from "react-bootstrap"
 import LoginButton from "./LoginButton"
 import LogoutButton from "./LogoutButton"
-import { Navigate } from "react-router-dom"
 import "../index.css"
 
 const NavbarComponent = () => {
