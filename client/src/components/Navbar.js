@@ -4,6 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react"
 import { Navbar, Nav } from "react-bootstrap"
 import LoginButton from "./LoginButton"
 import LogoutButton from "./LogoutButton"
+import { Navigate } from "react-router-dom"
 import "../index.css"
 
 const NavbarComponent = () => {
@@ -18,24 +19,20 @@ const NavbarComponent = () => {
 
   const sendDataToBackend = async (userData) => {
     try {
-      const response = await fetch(
-        "http://localhost:5050/save-user-data",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: userData.name,
-            email: userData.email,
-          }),
-        }
-      )
+      const response = await fetch("http://localhost:5050/save-user-data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: userData.name,
+          email: userData.email,
+        }),
+      })
 
       if (!response.ok) {
         throw new Error("Failed to save user data")
       }
-
 
       const responseData = await response.json()
       console.log("User data saved successfully", responseData)
@@ -45,17 +42,22 @@ const NavbarComponent = () => {
   }
 
   const scrollToRecipeFinder = () => {
-    const navbarHeight = 95
-    const mainContainerTop = document.querySelector(".main-container").offsetTop
+    if (window.location.pathname !== "/") {
+      window.location.href = "/?scroll=true"
+    }
+    else{
+      const navbarHeight = 95
+      const mainContainerTop =
+        document.querySelector(".main-container").offsetTop
 
-    const scrollPosition = mainContainerTop - navbarHeight
+      const scrollPosition = mainContainerTop - navbarHeight
 
-    window.scrollTo({
-      top: scrollPosition,
-      behavior: "smooth",
-    })
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth",
+      })
+    }
   }
-
   return (
     <Navbar
       className="rounded-pill d-flex justify-content-between align-items-center"
@@ -66,7 +68,9 @@ const NavbarComponent = () => {
         padding: "10px",
       }}
     >
-      <Navbar.Brand className="gradient-text">Healthy</Navbar.Brand>
+      <Navbar.Brand href="/" className="gradient-text">
+        Healthy
+      </Navbar.Brand>
       <Nav className="mr-auto justify-content-center">
         <Nav.Link
           href="#"
@@ -87,7 +91,9 @@ const NavbarComponent = () => {
           </Nav.Link>
         )}
       </Nav>
-      {isAuthenticated && <h1 style={{fontSize: "15px", marginTop: "9px"}}>{user.name}</h1>}
+      {isAuthenticated && (
+        <h1 style={{ fontSize: "15px", marginTop: "9px" }}>{user.name}</h1>
+      )}
       <div>
         <LoginButton />
         <LogoutButton />
