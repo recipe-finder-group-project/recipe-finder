@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import SingleRecipe from "../components/SingleRecipe"
-// const { ObjectId } = require("mongoose")
-
+import { Spinner } from "react-bootstrap"
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState(null)
@@ -11,53 +10,56 @@ const Recipe = () => {
   const urlParams = new URLSearchParams(location.search)
   const ridParam = urlParams.get("rID")
 
-//   continuing recipe render; problem is
-//   to query by id i must use the ObjectID wrapper
-//   find another way, maybe new seach/id api route(easiest)
+  //fetch recipe
+  useEffect(() => {
+    const sendRecipeRequest = async () => {
+      setIsLoading(true)
 
-//   useEffect(() => {
-//     const sendRecipeRequest = async () => {
-//       setIsLoading(true); // Set loading state to true before fetching
+      try {
+        const response = await fetch(
+          "http://localhost:5050/api/recipes/" + ridParam,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
 
-//       try {
-//         const response = await fetch(
-//           "http://localhost:5050/api/recipes/search",
-//           {
-//             method: "POST",
-//             headers: {
-//               "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({
-//               "_id": '65c38173bd5ed41ba2f46a3a'
-//             }),
-//           }
-//         )
+        if (!response.ok) {
+          throw new Error("Failed to fetch recipes")
+        }
+        const responseData = await response.json()
+        setRecipe(responseData)
+        console.log(responseData)
+      } catch (error) {
+        console.error("Error fetching recipes:", error)
+      } finally {
+        setIsLoading(false) // Set loading state to false after fetching
+      }
+    }
 
-//         if (!response.ok) {
-//           throw new Error("Failed to fetch recipes")
-//         }
-//         const responseData = await response.json()
-//         setRecipe(responseData)
-//         console.log(recipe)
-//         console.log(responseData)
-//       } catch (error) {
-//         console.error("Error fetching recipes:", error)
-//       } finally {
-//         setIsLoading(false); // Set loading state to false after fetching
-//       }
-//     };
+    sendRecipeRequest()
+  }, [ridParam])
 
-//     sendRecipeRequest(); // Call the function
-//   }, [ridParam]); // Listen for changes in ridParam
-
-//   if (isLoading) {
-//     return <div>Loading...</div>; // Render loading state
-//   }
+  if (isLoading) {
+    return (
+      <center>
+        <Spinner
+          style={{ marginTop: "50px" }}
+          animation="border"
+          role="status"
+          variant="warning"
+        >
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </center>
+    )
+  }
 
   return (
     <div>
-      <h1>{ridParam}</h1>
-      {/* <SingleRecipe recipe={recipe} /> */}
+      <SingleRecipe recipe={recipe} />
     </div>
   )
 }

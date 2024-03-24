@@ -8,14 +8,30 @@ const getAllRecipes = async (req, res) => {
   res.status(200).json(recipes)
 }
 
+const getRecipeById = async (req, res) => {
+  const { id } = req.params
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: "No such recipe" })
+  }
+
+  const recipe = await Recipe.findOne({ _id: id })
+
+  if (!recipe) {
+    return res.status(400).json({ error: "No such recipe" })
+  }
+
+  res.status(200).json(recipe)
+}
+
 //fetching recipes using react hooks
 // route is: react subfilter button POST (returns @mealCategory & @dietType ->
-// server/api/recipes/search (@parameters mealCategory * dietType) -> 
+// server/api/recipes/search (@parameters mealCategory * dietType) ->
 // MongoDB fetching the recipes by filters mentioned above ->
 // react component assembles json response data
 const getRecipes = async (req, res) => {
-  const dietType = req.body.dietTypeFilter;
-  const mealCategory = req.body.mealCategoryFilter;
+  const dietType = req.body.dietTypeFilter
+  const mealCategory = req.body.mealCategoryFilter
 
   const recipes = await Recipe.find({
     dietType: dietType,
@@ -103,6 +119,7 @@ const updateRecipe = async (req, res) => {
 
 module.exports = {
   getAllRecipes,
+  getRecipeById,
   createRecipe,
   deleteRecipe,
   updateRecipe,

@@ -59,7 +59,6 @@
 
 /* Ensure the carousel container doesn't resize */
 .carousel-container {
-  overflow: hidden;
   height: 400px; /* Static height */
   border-radius: 15px !important;
 }
@@ -77,4 +76,10 @@
   padding-top: 10px;
   line-height: 27px !important;
   font-weight: 400;
+}
+
+@media screen and (max-width: 767px) {
+  .container-fluid{
+    margin-top: 15px;
+  }
 }

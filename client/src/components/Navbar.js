@@ -91,7 +91,7 @@ const NavbarComponent = () => {
         )}
       </Nav>
       {isAuthenticated && (
-        <h1 style={{ fontSize: "15px", marginTop: "9px" }}>{user.name}</h1>
+        <h1 className="name">{user.name}</h1>
       )}
       <div>
         <LoginButton />

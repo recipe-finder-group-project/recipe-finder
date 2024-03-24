@@ -18,8 +18,9 @@ const RecipeCard = ({ recipes }) => {
               />
             )}
             <h2 className="recipe-name">{recipe.name}</h2>
-            <LearnMoreButton recipeID={recipe._id}/>
+
             <div className="info-bullets-container">
+              <LearnMoreButton recipeID={recipe._id} />
               <p className="info-bullets">{recipe.preparationTime} minutes</p>
               <p className="info-bullets">
                 {recipe.difficulty === 1 && (

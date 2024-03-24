@@ -2,8 +2,8 @@
   display: flex;
   position: absolute;
   bottom: 0px;
-  margin-bottom: 50px;
   align-items: center;
+  margin-bottom: 25px;
 }
 
 .learn-more-button {
