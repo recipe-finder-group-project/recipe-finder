@@ -1,30 +1,54 @@
-import React, { useState } from "react"
-import "./css/HeartButton.css" // Import your CSS file
+import React, { useEffect, useState } from "react"
+import "./css/SaveRecipeButton.css"
+import { useAuth0 } from "@auth0/auth0-react"
 
-const SaveRecipeButton = () => {
-  const [clicked, setClicked] = useState(false)
+const SaveRecipeButton = ({ recipeID }) => {
+  const { user, isAuthenticated } = useAuth0()
+  const [isSaved, setIsSaved] = useState(false)
+
+  // useEffect(() => {
+
+  // }, [])
 
   const handleClick = () => {
-    setClicked(true);
+    if (!isSaved) {
+      saveRecipe(user.email, recipeID)
+    }
+  }
 
-    // Delay the color change back to black
-    setTimeout(() => {
-      setClicked(false);
-    }, 750); // Half of the animation duration for each direction
+  const saveRecipe = async (email, recipe_id) => {
+    try {
+      const response = await fetch("http://localhost:5050/add-to-favorites", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          recipe: recipe_id,
+        }),
+      })
 
-    // Ensure the color is reset to blue after the full animation duration
-    setTimeout(() => {
-      setClicked(false);
-    }, 1500); // Animation duration is 3 seconds
-  };
+      if (!response.ok) {
+        throw new Error("Failed to save recipe")
+      }
+
+      const responseData = await response.json()
+      console.log("Recipe saved successfully", responseData)
+      setIsSaved(true) // Update state to indicate recipe is saved
+    } catch (error) {
+      console.error("Error saving recipe:", error)
+    }
+  }
 
   return (
-    <button
-      className={`heartButton ${clicked ? "clicked" : ""}`}
-      onClick={handleClick}
-    >
-     Save ♡
-    </button>
+    <div>
+      {isAuthenticated && (
+        <p onClick={handleClick} className={`save-button ${isSaved ? 'saved' : ''}`}>
+          {isSaved ? '✔' : 'Add to favorites'}
+        </p>
+      )}
+    </div>
   )
 }
 

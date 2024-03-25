@@ -85,7 +85,7 @@ const NavbarComponent = () => {
           Contacts
         </Nav.Link>
         {isAuthenticated && (
-          <Nav.Link href="#" className="links-text">
+          <Nav.Link href="/saved" className="links-text">
             Saved Recipes
           </Nav.Link>
         )}

@@ -6,6 +6,7 @@ import './index.css'
 //pages & components
 import Home from "./pages/Home"
 import Recipe from "./pages/Recipe"
+import Saved from "./pages/SavedRecipes"
 import NavbarComponent from "./components/Navbar"
 import Footer from "./components/Footer";
 
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/recipe" element={<Recipe />} />
+            <Route path="/saved" element={<Saved/>} />
           </Routes>
         </div>
         <Footer />

@@ -1,5 +1,7 @@
 import React from "react"
 import "./css/SingleRecipe.css"
+import "./SaveRecipeButton"
+import SaveRecipeButton from "./SaveRecipeButton"
 
 const RecipeCard = ({ recipe }) => {
   if (!recipe) {
@@ -22,7 +24,7 @@ const RecipeCard = ({ recipe }) => {
             )}
           </div>
           <div className="recipe-right">
-            <h2>{recipe.name}</h2>
+            <h1 className="recipe-title-text">{recipe.name}</h1>
             <div className="info-bullets-container-s">
               <p className="info-bullets">{recipe.preparationTime} minutes</p>
               <p className="info-bullets">
@@ -52,19 +54,24 @@ const RecipeCard = ({ recipe }) => {
                 )}
               </p>
             </div>
-
-            <p>Ingredients : </p>
-            <ul>
+            <br></br>
+            <h2 className="recipe-text-underlined underlined">
+              Ingredients :{" "}
+            </h2>
+            <ul className="main-recipe-text">
               {recipe.ingredients.map((ingredient, index) => (
                 <li key={index}>{ingredient}</li>
               ))}
             </ul>
-            <p>Preparation : </p>
-            <ul>
+            <h2 className="recipe-text-underlined underlined">
+              Instructions :{" "}
+            </h2>
+            <ul className="main-recipe-text">
               {recipe.preparation.map((preparationStep, index) => (
                 <li key={index}>{preparationStep}</li>
               ))}
             </ul>
+            <SaveRecipeButton recipeID={recipe._id} />
           </div>
         </div>
       </React.Fragment>
