@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react"
 import "./css/Recipefinder.css"
 import LearnMoreButton from "./LearnMoreButton"
-import { userLocation } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react"
 
 const RecipeCard = ({ recipes }) => {
   const [path, setPath] = useState(false)
+  const { user, isAuthenticated } = useAuth0()
 
   useEffect(() => {
     if (window.location.pathname === "/saved") {
@@ -12,6 +13,34 @@ const RecipeCard = ({ recipes }) => {
       console.log("saved-path")
     }
   }, [])
+
+  const removeRecipe = async (id) => {
+    try {
+      const response = await fetch(
+        "http://localhost:5050/remove-from-favorites",
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: user.email,
+            recipe: id,
+          }),
+        }
+      )
+
+      if (!response.ok) {
+        throw new Error("Failed to remove the recipe")
+      }
+
+      const responseData = await response.json()
+      window.location.reload()
+      console.log("Recipe removed successfully", responseData)
+    } catch (error) {
+      console.error("Error removing recipe:", error)
+    }
+  }
 
   return (
     <div className="recipes-container">
@@ -28,7 +57,14 @@ const RecipeCard = ({ recipes }) => {
               />
             )}
             <h2 className="recipe-name">{recipe.name}</h2>
-
+            {path && (
+              <p
+                className="remove-button"
+                onClick={() => removeRecipe(recipe._id)}
+              >
+                ⤫
+              </p>
+            )}
             <div className="info-bullets-container">
               <LearnMoreButton recipeID={recipe._id} />
               <p className="info-bullets">{recipe.preparationTime} minutes</p>
@@ -58,7 +94,6 @@ const RecipeCard = ({ recipes }) => {
                   </>
                 )}
               </p>
-              {path && <p className="remove-button">⤫</p>}
             </div>
           </div>
         </div>

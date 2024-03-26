@@ -77,7 +77,7 @@
   justify-content: flex-start; /* Align items to the left */
   gap: 5px; /* Add 5px gaps between all the cards */
   margin-top: 10px;
-  margin: 30px 35px;
+  margin: 30px 30px;
   color: #222222;
   
 }
@@ -87,7 +87,7 @@
   margin-bottom: 20px;
   box-sizing: border-box;
   padding: 10px;
-  height: 480px;
+  height: 500px;
   min-width: 310px;
   position: relative;
 }
@@ -143,11 +143,15 @@
 
 .remove-button{
   background-color: #C60000;
-  border-radius: 100%;
+  border-radius: 25px;
   text-align: center;
   color: white;
   cursor: pointer;
-  width: 35px;
+  width: 88%;
   height: 35px;
   font-size: x-large;
+  position: absolute;
+  margin-right: 30px;
+  margin-top: 22px;
+  z-index: 1000;
 }
