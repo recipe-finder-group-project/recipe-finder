@@ -1,8 +1,18 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import "./css/Recipefinder.css"
 import LearnMoreButton from "./LearnMoreButton"
+import { userLocation } from "react-router-dom"
 
 const RecipeCard = ({ recipes }) => {
+  const [path, setPath] = useState(false)
+
+  useEffect(() => {
+    if (window.location.pathname === "/saved") {
+      setPath(true)
+      console.log("saved-path")
+    }
+  }, [])
+
   return (
     <div className="recipes-container">
       {recipes.map((recipe) => (
@@ -48,6 +58,7 @@ const RecipeCard = ({ recipes }) => {
                   </>
                 )}
               </p>
+              {path && <p className="remove-button">⤫</p>}
             </div>
           </div>
         </div>

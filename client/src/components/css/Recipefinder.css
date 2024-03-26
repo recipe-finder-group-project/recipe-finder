@@ -79,6 +79,7 @@
   margin-top: 10px;
   margin: 30px 35px;
   color: #222222;
+  
 }
 
 .recipe {
@@ -138,4 +139,15 @@
   font-size: 25px;
   font-weight: 300;
   max-height: 30px;
+}
+
+.remove-button{
+  background-color: #C60000;
+  border-radius: 100%;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  font-size: x-large;
 }
