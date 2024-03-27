@@ -17,7 +17,7 @@ const Recipe = () => {
 
       try {
         const response = await fetch(
-          "http://localhost:5050/api/recipes/" + ridParam,
+          "https://recipe-finder-server-xgd5.onrender.com/api/recipes/" + ridParam,
           {
             method: "GET",
             headers: {

@@ -18,7 +18,7 @@ const SavedRecipesComponent = () => {
           return // Exit early if user is not authenticated or undefined
         }
 
-        const response = await fetch("http://localhost:5050/get-favorites", {
+        const response = await fetch("https://recipe-finder-server-xgd5.onrender.com/get-favorites", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const SavedRecipesComponent = () => {
 
         // Fetch full recipe data for each ID
         const recipeDataPromises = recipeIds.map((id) =>
-          fetch(`http://localhost:5050/api/recipes/${id}`).then((res) =>
+          fetch(`https://recipe-finder-server-xgd5.onrender.com/api/recipes/${id}`).then((res) =>
             res.json()
           )
         )

@@ -18,7 +18,7 @@ const NavbarComponent = () => {
 
   const sendDataToBackend = async (userData) => {
     try {
-      const response = await fetch("http://localhost:5050/save-user-data", {
+      const response = await fetch("https://recipe-finder-server-xgd5.onrender.com/save-user-data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -14,7 +14,7 @@ const SaveRecipeButton = ({ recipeID }) => {
 
   const saveRecipe = async (email, recipe_id) => {
     try {
-      const response = await fetch("http://localhost:5050/add-to-favorites", {
+      const response = await fetch("https://recipe-finder-server-xgd5.onrender.com/add-to-favorites", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

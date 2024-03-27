@@ -17,7 +17,7 @@ const RecipeCard = ({ recipes }) => {
   const removeRecipe = async (id) => {
     try {
       const response = await fetch(
-        "http://localhost:5050/remove-from-favorites",
+        "https://recipe-finder-server-xgd5.onrender.com/remove-from-favorites",
         {
           method: "DELETE",
           headers: {
