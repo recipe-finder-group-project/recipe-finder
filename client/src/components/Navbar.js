@@ -18,26 +18,21 @@ const NavbarComponent = () => {
 
   const sendDataToBackend = async (userData) => {
     try {
-      const response = await fetch(
-        "https://recipe-finder-server-xgd5.onrender.com/save-user-data",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            // Add any other headers you may need, such as authorization tokens
-          },
-          body: JSON.stringify({
-            name: userData.name,
-            email: userData.email,
-          }),
-        }
-      )
+      const response = await fetch("https://recipe-finder-server-xgd5.onrender.com/save-user-data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: userData.name,
+          email: userData.email,
+        }),
+      })
 
       if (!response.ok) {
         throw new Error("Failed to save user data")
       }
 
-      // Handle the response from the server if needed
       const responseData = await response.json()
       console.log("User data saved successfully", responseData)
     } catch (error) {
@@ -46,17 +41,22 @@ const NavbarComponent = () => {
   }
 
   const scrollToRecipeFinder = () => {
-    const navbarHeight = 95
-    const mainContainerTop = document.querySelector(".main-container").offsetTop
+    if (window.location.pathname !== "/") {
+      window.location.href = "/?scroll=true"
+    }
+    else{
+      const navbarHeight = 95
+      const mainContainerTop =
+        document.querySelector(".main-container").offsetTop
 
-    const scrollPosition = mainContainerTop - navbarHeight
+      const scrollPosition = mainContainerTop - navbarHeight
 
-    window.scrollTo({
-      top: scrollPosition,
-      behavior: "smooth",
-    })
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth",
+      })
+    }
   }
-
   return (
     <Navbar
       className="rounded-pill d-flex justify-content-between align-items-center"
@@ -67,7 +67,9 @@ const NavbarComponent = () => {
         padding: "10px",
       }}
     >
-      <Navbar.Brand className="gradient-text">Healthy</Navbar.Brand>
+      <Navbar.Brand href="/" className="gradient-text">
+        Healthy
+      </Navbar.Brand>
       <Nav className="mr-auto justify-content-center">
         <Nav.Link
           href="#"
@@ -82,7 +84,15 @@ const NavbarComponent = () => {
         <Nav.Link href="#" className="links-text">
           Contacts
         </Nav.Link>
+        {isAuthenticated && (
+          <Nav.Link href="/saved" className="links-text">
+            Saved Recipes
+          </Nav.Link>
+        )}
       </Nav>
+      {isAuthenticated && (
+        <h1 className="name">{user.name}</h1>
+      )}
       <div>
         {isAuthenticated && <h1 style={{fontSize: "15px"}}>{user.name}</h1>}
         <LoginButton />

@@ -84,3 +84,27 @@ header a {
 .links-text:hover {
   color: #89e790 !important;
 }
+
+.name{
+  font-size: 15px;
+  margin-top: 9px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 767px) {
+  .links-text {
+   font-size: 10px !important;
+  }
+
+  .login-button,
+  .logout-button {
+    font-size: 10px;
+    width: 50px;
+    height: 50px;
+    justify-items: center;
+    border-radius: 100%;
+  }
+  .name{
+   font-size: 12px;
+  }
+}

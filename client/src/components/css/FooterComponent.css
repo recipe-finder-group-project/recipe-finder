@@ -1,0 +1,246 @@
+.main-footer-container {
+  border-radius: 25px;
+  margin-top: 70px; /* or padding-top, depending on your layout needs */
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+/* Flex container for the middle section to evenly space the two cards */
+.middle-section .d-flex {
+  padding-top: 5px;
+  gap: 5px; /* Adjust gap between the two middle cards */
+}
+
+.bottom-section {
+  padding-top: 5px;
+}
+
+.left-middle-card,
+.right-middle-card {
+  width: 50%; /* Ensures each card takes up half the width of the container */
+}
+
+.top-content-card {
+  background-color: #f0e8de;
+  color: black;
+}
+.right-middle-card {
+  background-color: #89e790;
+}
+.bottom-content-card {
+  background-color: #f4d06a;
+  padding: 20px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+}
+
+.right-middle-card,
+.left-middle-card {
+  height: inherit;
+  padding-bottom: 10px;
+}
+
+.left-right-align {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-title-text {
+  font-size: 100px;
+  line-height: 55px;
+  text-align: left;
+  padding-top: 14px;
+  padding-left: 10px;
+}
+.footer-description-text {
+  font-size: 14px;
+  text-align: left;
+  padding-top: 14px;
+  width: 500px;
+  font-weight: 300;
+}
+
+.left-right-align > div:first-child {
+  flex: 1;
+  padding-right: 10px; /* Adjust as needed */
+}
+
+.left-right-align > div:last-child {
+  flex: 1;
+  text-align: right;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(1);
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #ffffff;
+}
+
+.carousel .carousel-indicators li {
+  background-color: #888;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.carousel .carousel-indicators .active {
+  background-color: #fff;
+}
+
+.testimonial-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-text h5 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.testimonial-text p {
+  font-size: 0.9em;
+  color: black;
+}
+
+/* AFSJBAFPISBVFPIYV */
+
+.footer-bottom-title-text {
+  font-size: 80px;
+  line-height: 60px;
+  text-align: left;
+  padding-top: 14px;
+  padding-right: 50px;
+  margin: 0;
+}
+.image {
+  margin-left: 5px;
+  height: 55px;
+  width: 55px;
+}
+
+.image:first-child {
+  margin-left: 0px;
+}
+
+.social-icons {
+  /* Add styles for social media icons */
+  align-self: flex-end;
+  justify-content: space-between;
+  position: relative;
+}
+
+.left-right-align-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 10px;
+  width: 100%; /* Ensures it spans the full width of its parent */
+}
+
+.footer-bottom-left,
+.footer-bottom-right {
+  display: flex;
+  flex-direction: column; /* Organizes content vertically */
+  justify-content: space-between; /* Spreads the content vertically as much as possible */
+}
+
+.footer-bottom-left {
+  text-align: left;
+  flex-grow: 1; /* Ensures it takes up the necessary space */
+}
+
+.footer-bottom-right {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end; /* Aligns the content to the right */
+  flex-grow: 1;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end; /* Aligns icons to the right */
+  gap: 5px; /* Adds space between icons */
+  margin-top: auto; /* Pushes the icons to the bottom */
+}
+
+.thankyou-text {
+  line-height: 15px;
+  margin: 0; /* Removes default margins for a cleaner look */
+}
+
+.email-text {
+  align-self: flex-end; /* Aligns the email to the right */
+}
+
+@media screen and (max-width: 767px) {
+  .footer-title-text {
+    font-size: 45px;
+    line-height: 10px;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+  .left-right-align > div:first-child {
+    flex: 1;
+    padding-right: 10px; /* Adjust as needed */
+  }
+
+  .left-right-align > div:last-child {
+    flex: 1;
+    text-align: center;
+  }
+  .footer-description-text {
+    width: auto; /* Change width to auto for responsiveness */
+    padding: 10px; /* Add padding to create space between elements */
+  }
+  .h2 .footer-description-text {
+    opacity: 0%;
+  }
+  .left-right-align-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom-left,
+  .footer-bottom-right {
+    align-items: center; /* Center content for smaller screens */
+    text-align: center;
+    margin: 0 0 20px; /* Add space between the two footer components */
+  }
+
+  .email-text {
+    align-self: center; /* Center email on smaller screens */
+    padding-bottom: 0; /* Reset padding if necessary */
+  }
+
+  .social-icons {
+    justify-content: center; /* Center icons on smaller screens */
+    margin-top: 10px; /* Provide some space above the icons */
+  }
+
+  .image {
+    margin: 0 5px; /* Ensure proper spacing around images */
+  }
+
+  .footer-bottom-title-text {
+    font-size: 40px; /* Smaller font size for the titles on smaller screens */
+    line-height: normal; /* Adjust line height if necessary */
+    padding: 0; /* Reset padding if necessary */
+  }
+
+  .thankyou-text {
+    line-height: normal; /* Adjust line height if necessary */
+  }
+}

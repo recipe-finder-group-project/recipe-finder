@@ -25,7 +25,7 @@
 }
 
 .card {
-    background-color: #D86631;
+    background-color: #ff5c00;
     color: white;
 }
 
@@ -50,7 +50,6 @@
 .btn:active{
     background-color: #F4D06A !important;
 }
-
 .carousel-container .carousel-item img {
   object-fit: cover;
   height: 400px; /* Ensures the carousel images fit without altering the container's size */
@@ -60,7 +59,6 @@
 
 /* Ensure the carousel container doesn't resize */
 .carousel-container {
-  overflow: hidden;
   height: 400px; /* Static height */
   border-radius: 15px !important;
 }
@@ -72,9 +70,16 @@
   font-weight: 250;
 }
 
-.title-text {
-  font-size: 50px;
+.title-text-ban {
+  font-size: 55px;
   text-align: left !important;
-  line-height: 0.75;
+  padding-top: 10px;
+  line-height: 27px !important;
   font-weight: 400;
+}
+
+@media screen and (max-width: 767px) {
+  .container-fluid{
+    margin-top: 15px;
+  }
 }

@@ -10,6 +10,10 @@ const profileSchema = new Schema({
   email: {
     type: String,
     required:true,
+  },
+  saved_recipes: {
+    type: Array,
+    required: false,
   }
 })
 

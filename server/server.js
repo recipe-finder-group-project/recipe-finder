@@ -14,6 +14,7 @@ const app = express()
 app.use(express.json())
 
 //cors middleware to allow requests from client
+// change back to dep server
 app.use(cors({
    origin: "https://recipe-finder-client.onrender.com"
  }))

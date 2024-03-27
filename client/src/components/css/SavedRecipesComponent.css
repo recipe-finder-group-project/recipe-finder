@@ -1,0 +1,12 @@
+.saved-recipes{
+    background-color: #F0E8DE;
+    color: black;
+    border-radius: 15px;
+}
+
+.saved-title{
+    font-size: 4rem;
+    font-weight: 450;
+    padding-left: 25px;
+    padding-top: 20px;
+}
