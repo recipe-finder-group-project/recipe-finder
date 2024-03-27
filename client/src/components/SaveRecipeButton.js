@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import "./css/SaveRecipeButton.css"
 import { useAuth0 } from "@auth0/auth0-react"
 
 const SaveRecipeButton = ({ recipeID }) => {
   const { user, isAuthenticated } = useAuth0()
   const [isSaved, setIsSaved] = useState(false)
-
-  // useEffect(() => {
-
-  // }, [])
 
   const handleClick = () => {
     if (!isSaved) {
