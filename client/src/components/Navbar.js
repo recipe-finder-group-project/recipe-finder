@@ -94,6 +94,7 @@ const NavbarComponent = () => {
         <h1 className="name">{user.name}</h1>
       )}
       <div>
+        {isAuthenticated && <h1 style={{fontSize: "15px"}}>{user.name}</h1>}
         <LoginButton />
         <LogoutButton />
       </div>

@@ -62,3 +62,60 @@ Access the react app via:
 ```
   localhost:3000/home
 ```
+
+## File Tree
+```
+recipe-finder
+├── LICENSE
+├── README.md
+├── client
+│   ├── README.md
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   └── src
+│       ├── App.js
+│       ├── components
+│       │   ├── Banner.js
+│       │   ├── LoginButton.js
+│       │   ├── LogoutButton.js
+│       │   ├── Navbar.js
+│       │   ├── Profile.js
+│       │   ├── Recipe.js
+│       │   ├── RecipeFinder.js
+│       │   ├── ReviewCard.js
+│       │   ├── SingleRecipe.js
+│       │   ├── css
+│       │   │   ├── BannerComponent.css
+│       │   │   └── Recipefinder.css
+│       │   ├── dietTypeFilter.js
+│       │   └── mealCategoryFilter.js
+│       ├── images
+│       │   ├── medi-lunch.png
+│       │   ├── vegan-lunch.png
+│       │   └── veggie-lunch.png
+│       ├── index.css
+│       ├── index.js
+│       ├── pages
+│       │   └── Home.js
+│       ├── setupProxy.js
+│       └── utils
+│           └── APIRoutes.js
+└── server
+    ├── controllers
+    │   ├── profileController.js
+    │   └── recipeController.js
+    ├── models
+    │   ├── profileModel.js
+    │   └── recipeModel.js
+    ├── routes
+    │   ├── profiles.js
+    │   └── recipes.js
+    └── server.js
+
+13 directories, 38 files
+```
