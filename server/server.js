@@ -15,8 +15,9 @@ app.use(express.json())
 
 //cors middleware to allow requests from client
 // change back to dep server
+//changed front-end deployemnt for netlify..
 app.use(cors({
-   origin: "https://recipe-finder-client.onrender.com"
+   origin: "https://recipe-finder-healthy.netlify.app"
  }))
 
 app.use((req, res, next) => {
