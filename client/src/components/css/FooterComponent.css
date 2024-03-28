@@ -203,6 +203,7 @@
   .footer-description-text {
     width: auto; /* Change width to auto for responsiveness */
     padding: 10px; /* Add padding to create space between elements */
+    line-height: 5px;
   }
   .h2 .footer-description-text {
     opacity: 0%;
