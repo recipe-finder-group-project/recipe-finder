@@ -1,11 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import "./css/LearnMoreButton.css" // Import your CSS file
 
 const LearnMoreButton = ({ recipeID }) => {
-  const [clicked, setClicked] = useState(false)
 
   const handleClick = () => {
-    setClicked(true)
     console.log("learned..")
     window.location.href = "/recipe?rID=" + recipeID
   }
