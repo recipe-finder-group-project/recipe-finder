@@ -10,6 +10,7 @@ import Saved from "./pages/SavedRecipes"
 import NavbarComponent from "./components/Navbar"
 import Footer from "./components/Footer"
 import AboutUs from "./pages/AboutUs"
+import Contacts from "./pages/Contacts"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/recipe" element={<Recipe />} />
             <Route path="/saved" element={<Saved />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<Contacts />} />
           </Routes>
         </div>
         <Footer />

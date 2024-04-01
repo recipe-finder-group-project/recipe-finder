@@ -94,7 +94,7 @@ const NavbarComponent = () => {
         <Nav.Link href="/about" className="links-text">
           About Us
         </Nav.Link>
-        <Nav.Link href="#" className="links-text" onClick={scrollToContacts}>
+        <Nav.Link href="/contact" className="links-text" onClick={scrollToContacts}>
           Contacts
         </Nav.Link>
         {isAuthenticated && (
