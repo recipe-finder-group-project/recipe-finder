@@ -81,10 +81,10 @@ const Footer = () => {
                       <img
                         className="testimonial-image"
                         src={review2}
-                        alt="Kian Graham"
+                        alt="Hannah Shield"
                       />
                       <div className="testimonial-text">
-                        <h5>Kian Graham</h5>
+                        <h5>Hannah Shield</h5>
                         <p>
                           I've always been health-conscious but found it tedious
                           to track down recipes that fit my lifestyle. Since I
@@ -102,10 +102,10 @@ const Footer = () => {
                       <img
                         className="testimonial-image"
                         src={review3}
-                        alt="Kian Graham"
+                        alt="Bob Warret"
                       />
                       <div className="testimonial-text">
-                        <h5>Kian Graham</h5>
+                        <h5>Bob Warret</h5>
                         <p>
                           Healthy has been a game-changer for my family and me.
                           As a busy parent, I struggled to find time to search
