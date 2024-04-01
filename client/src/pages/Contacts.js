@@ -69,3 +69,5 @@ const Contacts = () => {
     </section>
   )
 }
+
+export default Contacts
