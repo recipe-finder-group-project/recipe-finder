@@ -9,8 +9,9 @@ const Home = () => {
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search)
-    const scrollParam = urlParams.get("scroll")
     const scrollFaqParam = urlParams.get("scrollfaq")
+    const scrollParam = urlParams.get("scroll")
+
     if (scrollParam === "true") {
       const navbarHeight = 95
       const mainContainerTop =
@@ -21,7 +22,7 @@ const Home = () => {
         top: scrollPosition,
         behavior: "smooth",
       })
-    } else if (scrollfaqParam === "true") {
+    } else if (scrollFaqParam === "true") {
       const navbarHeight = 95
       const mainContainerTop = document.querySelector(
         ".main-footer-container"
