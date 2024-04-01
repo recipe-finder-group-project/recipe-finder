@@ -59,24 +59,6 @@ const NavbarComponent = () => {
       })
     }
   }
-
-  const scrollToAboutUs = () => {
-    if (window.location.pathname !== "/") {
-      window.location.href = "/?scrollfaq=true"
-    } else {
-      const navbarHeight = 95
-      const mainContainerTop = document.querySelector(
-        ".main-footer-container"
-      ).offsetTop
-
-      const scrollPosition = mainContainerTop - navbarHeight
-
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-      })
-    }
-  }
   const scrollToContacts = () => {
     const navbarHeight = 95
     const mainContainerTop = document.querySelector(".bottom-section").offsetTop
@@ -109,7 +91,7 @@ const NavbarComponent = () => {
         >
           Recipe Finder
         </Nav.Link>
-        <Nav.Link href="#" className="links-text" onClick={scrollToAboutUs}>
+        <Nav.Link href="/about" className="links-text">
           About Us
         </Nav.Link>
         <Nav.Link href="#" className="links-text" onClick={scrollToContacts}>

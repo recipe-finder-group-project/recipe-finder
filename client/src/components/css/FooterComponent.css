@@ -182,6 +182,11 @@
   align-self: flex-end; /* Aligns the email to the right */
 }
 
+.pic-team{
+  width: inherit;
+  height: inherit;
+}
+
 @media screen and (max-width: 767px) {
   .footer-title-text {
     font-size: 45px;

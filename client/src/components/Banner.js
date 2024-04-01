@@ -28,20 +28,6 @@ const BannerComponent = () => {
     })
   }
 
-  const scrollToAboutUs = () => {
-    const navbarHeight = 95
-    const mainContainerTop = document.querySelector(
-      ".main-footer-container"
-    ).offsetTop
-
-    const scrollPosition = mainContainerTop - navbarHeight
-
-    window.scrollTo({
-      top: scrollPosition,
-      behavior: "smooth",
-    })
-  }
-
   return (
     <div className="container-fluid p-0 d-flex" style={{ height: "400px" }}>
       {!isMobile && (
@@ -84,9 +70,8 @@ const BannerComponent = () => {
             <Button
               className="rounded-15 btn-gap btn-arrow"
               style={{ width: "50%" }}
-              onClick={scrollToAboutUs}
             >
-              About Us
+              Blog
             </Button>
           </div>
         </div>
