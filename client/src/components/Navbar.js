@@ -90,7 +90,7 @@ const NavbarComponent = () => {
   }
   return (
     <Navbar
-      className="navbar navbar-expand-lg rounded-pill d-flex justify-content-between align-items-center"
+      className="rounded-pill d-flex justify-content-between align-items-center"
       fixed="top"
       style={{
         backgroundColor: "rgba(96, 96, 96, 0.5)",
@@ -126,17 +126,6 @@ const NavbarComponent = () => {
         <LoginButton />
         <LogoutButton />
       </div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
     </Navbar>
   )
 }

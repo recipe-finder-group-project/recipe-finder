@@ -82,7 +82,7 @@ const BannerComponent = () => {
               Start Now
             </Button>
             <Button
-              className="rounded-15 btn-gap btn-start"
+              className="rounded-15 btn-gap btn-arrow"
               style={{ width: "50%" }}
               onClick={scrollToAboutUs}
             >

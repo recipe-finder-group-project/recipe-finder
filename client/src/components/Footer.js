@@ -28,7 +28,7 @@ const Footer = () => {
                   restrictions.
                 </h2>
                 <br></br>
-                <h2 className="footer-description-text">
+                <h2 className="footer-description-text footer-description-text-2">
                   Our mission is to revolutionize the way people discover
                   recipes and plan meals. We strive to provide a platform that
                   caters to a diverse range of dietary needs, making meal
