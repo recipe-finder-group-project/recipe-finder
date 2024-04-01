@@ -31,11 +31,17 @@
   padding-top: 5px;
 }
 
+.left-middle-card{
+  background-color: #ff5c00;
+}
+
 .left-middle-card,
 .right-middle-card {
   width: 50%; /* Ensures each card takes up half the width of the container */
   flex: 1 1 45%; /* Allows cards to wrap and maintain a minimum size */
   margin: 10px 0; /* Ensures spacing between items when wrapped */
+  border-radius: 15px;
+  height: inherit;
 }
 
 .top-content-card {
@@ -55,11 +61,7 @@
   height: inherit;
 }
 
-.right-middle-card,
-.left-middle-card {
-  height: inherit;
-  padding-bottom: 10px;
-}
+
 
 .left-right-align {
   display: flex;
