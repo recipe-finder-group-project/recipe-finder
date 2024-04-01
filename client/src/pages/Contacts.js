@@ -57,10 +57,10 @@ const Contacts = () => {
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="mt-5 mt-lg-0 mr-3">
+            <div class="mt-5 mt-lg-0">
               <img
                 alt=""
-                class="img-fluid"
+                class="img-fluid mr-3"
                 src="https://freefrontend.dev/assets/map-img-3.png"
               />
             </div>
