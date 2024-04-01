@@ -57,12 +57,12 @@ const Contacts = () => {
             </div>
           </div>
           <div class="col-lg-6 mr-4">
-            <div class="mt-5 mt-lg-0" style={{ marginRight: "10px" }}>
+            <div class="mt-5 mt-lg-0" style={{ marginRight: "15px" }}>
               <img
                 alt=""
                 class="img-fluid"
                 src="https://freefrontend.dev/assets/map-img-3.png"
-                style={{ marginRight: "10px" }}
+                style={{ marginRight: "15px" }}
               />
             </div>
           </div>
