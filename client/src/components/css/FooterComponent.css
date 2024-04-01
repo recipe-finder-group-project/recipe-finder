@@ -34,6 +34,7 @@
 .left-middle-card{
   background-color: #ff5c00;
   color: white !important;
+  height: inherit;
 }
 
 .left-middle-card,
@@ -187,7 +188,7 @@
 .footer-bottom-right {
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: center;
   align-items: flex-end; /* Aligns the content to the right */
   flex-grow: 1;
 }
