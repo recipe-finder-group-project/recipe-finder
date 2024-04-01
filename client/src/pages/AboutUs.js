@@ -49,7 +49,9 @@ const AboutUs = () => {
       </Row>
       <Row className="middle-section">
         <Col md={4}>
-          <h1 className="footer-title-text">What People Say</h1>
+          <center>
+            <h1 className="footer-title-text">What People Say</h1>
+          </center>
         </Col>
         <Col md={8}>
           <Carousel indicators={false} controls={false} interval={3000}>
