@@ -34,6 +34,7 @@
 .left-middle-card{
   background-color: #ff5c00;
   color: white !important;
+  line-height: normal;
 }
 
 .left-middle-card,
@@ -51,6 +52,7 @@
 }
 .right-middle-card {
   background-color: #89e790;
+  line-height: normal;
 }
 .bottom-content-card {
   background-color: #f4d06a;
