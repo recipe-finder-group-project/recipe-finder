@@ -60,7 +60,7 @@ const Contacts = () => {
             <div class="mt-5 mt-lg-0">
               <img
                 alt=""
-                class="img-fluid mr-3"
+                class="img-fluid mr-3 pr-4"
                 src="https://freefrontend.dev/assets/map-img-3.png"
               />
             </div>
