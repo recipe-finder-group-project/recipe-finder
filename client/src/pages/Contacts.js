@@ -57,7 +57,7 @@ const Contacts = () => {
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="mt-5 mt-lg-0">
+            <div class="mt-5 mt-lg-0 mr-4 pr-4">
               <img
                 alt=""
                 class="img-fluid mr-3 pr-4"
