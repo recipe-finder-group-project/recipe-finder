@@ -1,5 +1,5 @@
 import React from "react"
-import { Row, Col, Card, Carousel } from "react-bootstrap"
+import { Row, Col, Carousel } from "react-bootstrap"
 import review from "../images/review.png"
 import review2 from "../images/user1.png"
 import review3 from "../images/user2.png"
