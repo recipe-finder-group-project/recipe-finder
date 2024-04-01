@@ -8,7 +8,7 @@ import "../components/css/FooterComponent.css"
 
 const AboutUs = () => {
   return (
-    <div className="main-footer-container">
+    <div className="main-footer-container coloured">
       <Row className="top-section">
         <Col md={6}>
           <h1 className="footer-title-text">About Us</h1>

@@ -14,6 +14,10 @@
   gap: 10px;
 }
 
+.coloured {
+  background-color: #f0e8de;
+}
+
 .top-section,
 .middle-section,
 .bottom-section {
@@ -97,10 +101,6 @@
 
 .carousel-indicators [data-bs-target] {
   background-color: #ffffff;
-}
-.carousel-item img {
-  width: 100%;
-  height: auto;
 }
 
 .carousel .carousel-indicators li {
