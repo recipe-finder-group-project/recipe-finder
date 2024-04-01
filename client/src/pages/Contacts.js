@@ -62,6 +62,7 @@ const Contacts = () => {
                 alt=""
                 class="img-fluid"
                 src="https://freefrontend.dev/assets/map-img-3.png"
+                style={{ marginRight: "5px" }}
               />
             </div>
           </div>
