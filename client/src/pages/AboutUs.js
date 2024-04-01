@@ -4,7 +4,7 @@ import review from "../images/review.png"
 import review2 from "../images/user1.png"
 import review3 from "../images/user2.png"
 import team from "../images/about.png"
-import "./css/FooterComponent.css"
+import "../components/css/FooterComponent.css"
 
 const AboutUs = () => {
   ;<Card.Body className="top-section">
