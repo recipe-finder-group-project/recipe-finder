@@ -33,6 +33,7 @@
 
 .left-middle-card{
   background-color: #ff5c00;
+  color: white !important;
 }
 
 .left-middle-card,
@@ -207,9 +208,10 @@
 }
 
 .pic-team {
-  width: 80%;
-  height: 80%;
+  padding-top: 20px;
   border-radius: 15px;
+  width: auto;
+  height: auto;
 }
 
 .top-section .top-content-card,
