@@ -11,10 +11,10 @@ const AboutUs = () => {
     <div className="main-footer-container coloured">
       <Row className="top-section">
         <Col md={6}>
-          <h1 className="footer-title-text">About Us</h1>
           <img src={team} alt="team" className="pic-team" />
         </Col>
         <Col md={6}>
+          <h1 className="footer-title-text">About Us</h1>
           <p className="footer-description-text">
             Welcome to Healthy, where finding your next meal is as nourishing
             for your body as it is effortless for your schedule. Our platform
@@ -48,12 +48,12 @@ const AboutUs = () => {
         </Col>
       </Row>
       <Row className="middle-section">
-        <Col md={4}>
+        <Col md={4} className="left-middle-card">
           <center>
             <h1 className="footer-title-text">What People Say</h1>
           </center>
         </Col>
-        <Col md={8}>
+        <Col md={8} className="right-middle-card">
           <Carousel indicators={false} controls={false} interval={3000}>
             <Carousel.Item>
               <div className="testimonial">
