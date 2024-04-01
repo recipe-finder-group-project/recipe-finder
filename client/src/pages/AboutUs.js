@@ -15,6 +15,7 @@ const AboutUs = () => {
           <img src={team} alt="team" className="img-fluid" />
         </Col>
         <Col md={6}>
+          <img src={team} alt="team" className="img-fluid" />
           <p className="footer-description-text">
             Welcome to Healthy, where finding your next meal is as nourishing
             for your body as it is effortless for your schedule. Our platform
