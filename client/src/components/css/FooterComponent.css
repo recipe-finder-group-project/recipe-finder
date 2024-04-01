@@ -3,6 +3,7 @@
   margin: 70px 20px 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 /* Flex container for the middle section to evenly space the two cards */
 .middle-section .d-flex {
@@ -11,6 +12,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
+}
+
+.top-section,
+.middle-section,
+.bottom-section {
+  width: 100%; /* Ensure each section takes up the full width */
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in width calculations */
 }
 
 .bottom-section {
@@ -51,6 +60,8 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  align-items: flex-start; /* Align items to the start to prevent overlap */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .footer-title-text {
@@ -59,12 +70,13 @@
   text-align: left;
   padding-top: 14px;
   padding-left: 10px;
+  margin-bottom: 20px;
 }
 .footer-description-text {
   font-size: 1rem;
   text-align: justify;
   padding-top: 14px;
-  max-width: 600px; /* Limits width for better readability */
+  max-width: 500px; /* Limits width for better readability */
   font-weight: 300;
 }
 
@@ -85,6 +97,10 @@
 
 .carousel-indicators [data-bs-target] {
   background-color: #ffffff;
+}
+.carousel-item img {
+  width: 100%;
+  height: auto;
 }
 
 .carousel .carousel-indicators li {
