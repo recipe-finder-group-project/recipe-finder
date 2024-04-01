@@ -18,16 +18,19 @@ const NavbarComponent = () => {
 
   const sendDataToBackend = async (userData) => {
     try {
-      const response = await fetch("https://recipe-finder-server-xgd5.onrender.com/save-user-data", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: userData.name,
-          email: userData.email,
-        }),
-      })
+      const response = await fetch(
+        "https://recipe-finder-server-xgd5.onrender.com/save-user-data",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: userData.name,
+            email: userData.email,
+          }),
+        }
+      )
 
       if (!response.ok) {
         throw new Error("Failed to save user data")
@@ -43,8 +46,7 @@ const NavbarComponent = () => {
   const scrollToRecipeFinder = () => {
     if (window.location.pathname !== "/") {
       window.location.href = "/?scroll=true"
-    }
-    else{
+    } else {
       const navbarHeight = 95
       const mainContainerTop =
         document.querySelector(".main-container").offsetTop
@@ -57,9 +59,38 @@ const NavbarComponent = () => {
       })
     }
   }
+
+  const scrollToAboutUs = () => {
+    if (window.location.pathname !== "/") {
+      window.location.href = "/?scrollfaq=true"
+    } else {
+      const navbarHeight = 95
+      const mainContainerTop = document.querySelector(
+        ".main-footer-container"
+      ).offsetTop
+
+      const scrollPosition = mainContainerTop - navbarHeight
+
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth",
+      })
+    }
+  }
+  const scrollToContacts = () => {
+    const navbarHeight = 95
+    const mainContainerTop = document.querySelector(".bottom-section").offsetTop
+
+    const scrollPosition = mainContainerTop - navbarHeight
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    })
+  }
   return (
     <Navbar
-      className="rounded-pill d-flex justify-content-between align-items-center"
+      className="navbar navbar-expand-lg rounded-pill d-flex justify-content-between align-items-center"
       fixed="top"
       style={{
         backgroundColor: "rgba(96, 96, 96, 0.5)",
@@ -78,10 +109,10 @@ const NavbarComponent = () => {
         >
           Recipe Finder
         </Nav.Link>
-        <Nav.Link href="#" className="links-text">
+        <Nav.Link href="#" className="links-text" onClick={scrollToAboutUs}>
           About Us
         </Nav.Link>
-        <Nav.Link href="#" className="links-text">
+        <Nav.Link href="#" className="links-text" onClick={scrollToContacts}>
           Contacts
         </Nav.Link>
         {isAuthenticated && (
@@ -90,13 +121,22 @@ const NavbarComponent = () => {
           </Nav.Link>
         )}
       </Nav>
-      {isAuthenticated && (
-        <h1 className="name">{user.name}</h1>
-      )}
+      {isAuthenticated && <h1 className="name">{user.name}</h1>}
       <div>
         <LoginButton />
         <LogoutButton />
       </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </Navbar>
   )
 }

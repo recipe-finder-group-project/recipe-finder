@@ -2,6 +2,8 @@ import React from "react"
 import { Card, Carousel } from "react-bootstrap"
 import "./css/FooterComponent.css"
 import review from "../images/review.png"
+import review2 from "../images/user1.png"
+import review3 from "../images/user2.png" 
 import inst from "../images/insta.png"
 import lnkdn from "../images/linkedin.png"
 import twttr from "../images/twitter.png"
@@ -10,7 +12,7 @@ import fcbk from "../images/facebook.png"
 const Footer = () => {
   return (
     <div className="main-footer-container">
-      {/* Top Section */}
+
       <Card.Body className="top-section">
         <Card className="top-content-card">
           <Card.Body>
@@ -74,7 +76,46 @@ const Footer = () => {
                       </div>
                     </div>
                   </Carousel.Item>
-                  {/* Add more Carousel.Item components here for additional testimonials */}
+                  <Carousel.Item>
+                    <div className="testimonial">
+                      <img
+                        className="testimonial-image"
+                        src={review2}
+                        alt="Kian Graham"
+                      />
+                      <div className="testimonial-text">
+                        <h5>Kian Graham</h5>
+                        <p>
+                          I've always been health-conscious but found it tedious
+                          to track down recipes that fit my lifestyle. Since I
+                          started using Healthy, not only have I saved a ton of
+                          time, but I've also been consistently impressed with
+                          the variety and taste of the meals I've made. The
+                          app's design is sleek and user-friendly, and I love
+                          how it uses my pantry staples to suggest recipes.
+                        </p>
+                      </div>
+                    </div>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <div className="testimonial">
+                      <img
+                        className="testimonial-image"
+                        src={review3}
+                        alt="Kian Graham"
+                      />
+                      <div className="testimonial-text">
+                        <h5>Kian Graham</h5>
+                        <p>
+                          Healthy has been a game-changer for my family and me.
+                          As a busy parent, I struggled to find time to search
+                          for recipes that catered to our varied dietary needs.
+                          With Healthy, I've been able to discover a world of
+                          new, nutrition-packed meals that everyone enjoys
+                        </p>
+                      </div>
+                    </div>
+                  </Carousel.Item>
                 </Carousel>
               </center>
             </Card.Body>

@@ -1,27 +1,40 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import Banner from "../components/Banner";
-import RecipeFinder from "../components/RecipeFinder";
-import FAQComponent from "../components/FAQComponent";
+import React, { useEffect } from "react"
+import { useLocation } from "react-router-dom"
+import Banner from "../components/Banner"
+import RecipeFinder from "../components/RecipeFinder"
+import FAQComponent from "../components/FAQComponent"
 
 const Home = () => {
-  const location = useLocation();
+  const location = useLocation()
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
-    const scrollParam = urlParams.get("scroll");
+    const urlParams = new URLSearchParams(location.search)
+    const scrollParam = urlParams.get("scroll")
+    const scrollFaqParam = urlParams.get("scrollfaq")
     if (scrollParam === "true") {
-      const navbarHeight = 95;
-      const mainContainerTop = document.querySelector(".main-container")
-        .offsetTop;
-      const scrollPosition = mainContainerTop - navbarHeight;
+      const navbarHeight = 95
+      const mainContainerTop =
+        document.querySelector(".main-container").offsetTop
+      const scrollPosition = mainContainerTop - navbarHeight
 
       window.scrollTo({
         top: scrollPosition,
         behavior: "smooth",
-      });
+      })
+    } else if (scrollfaqParam === "true") {
+      const navbarHeight = 95
+      const mainContainerTop = document.querySelector(
+        ".main-footer-container"
+      ).offsetTop
+
+      const scrollPosition = mainContainerTop - navbarHeight
+
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth",
+      })
     }
-  }, [location.search]);
+  }, [location.search])
 
   return (
     <div className="home">
@@ -29,7 +42,7 @@ const Home = () => {
       <FAQComponent />
       <RecipeFinder />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
