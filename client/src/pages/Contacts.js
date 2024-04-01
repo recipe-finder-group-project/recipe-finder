@@ -3,17 +3,18 @@ import "react-bootstrap"
 
 const Contacts = () => {
   return (
-    <section class="py-5">
+    <section class="py-5 bg-light text-dark">
       <div class="container-fluid p-lg-0">
         <div class="row g-0 align-items-center">
           <div class="col-lg-6">
             <div class="col-lg-8 mx-auto">
-              <span class="text-muted">Let's Talk</span>
               <h2 class="display-5 fw-bold">Contact Us</h2>
               <p class="lead">
-                Lorem ipsum dolor, sit amet elit Quamnitm veniam dicta, quos
-                nemo minima nulla ducimus officii nulla ducimus officiis! Lorem
-                ipsum dolor, sit amet elit Quamnitm.
+                Thank you for reaching out to us! Whether you have a question,
+                feedback, or just want to say hello, we're here to listen and
+                help. Please fill out the form below with your details and
+                message. We strive to respond to all inquiries as swiftly as
+                possible.
               </p>
               <form>
                 <div class="row">
