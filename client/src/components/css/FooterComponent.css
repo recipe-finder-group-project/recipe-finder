@@ -34,7 +34,6 @@
 .left-middle-card{
   background-color: #ff5c00;
   color: white !important;
-  height: inherit;
 }
 
 .left-middle-card,
@@ -43,7 +42,7 @@
   flex: 1 1 45%; /* Allows cards to wrap and maintain a minimum size */
   margin: 10px 0; /* Ensures spacing between items when wrapped */
   border-radius: 15px;
-  height: inherit;
+  height: 100%;
 }
 
 .top-content-card {
