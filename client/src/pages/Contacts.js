@@ -56,13 +56,13 @@ const Contacts = () => {
               </form>
             </div>
           </div>
-          <div class="col-lg-6 mr-4">
-            <div class="mt-5 mt-lg-0">
+          <div class="col-lg-6 mr-4" style={{ marginRight: "10px" }}>
+            <div class="mt-5 mt-lg-0" style={{ marginRight: "10px" }}>
               <img
                 alt=""
                 class="img-fluid"
                 src="https://freefrontend.dev/assets/map-img-3.png"
-                style={{ marginRight: "5px" }}
+                style={{ marginRight: "10px" }}
               />
             </div>
           </div>
