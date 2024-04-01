@@ -8,7 +8,7 @@ import "../components/css/FooterComponent.css"
 
 const AboutUs = () => {
   return (
-    <div>
+    <div className="main-footer-container">
       <Card.Body className="top-section">
         <Card className="top-content-card">
           <Card.Body>
