@@ -12,10 +12,9 @@ const AboutUs = () => {
       <Row className="top-section">
         <Col md={6}>
           <h1 className="footer-title-text">About Us</h1>
-          <img src={team} alt="team" className="img-fluid" />
+          <img src={team} alt="team" className="pic-team" />
         </Col>
         <Col md={6}>
-          <img src={team} alt="team" className="img-fluid" />
           <p className="footer-description-text">
             Welcome to Healthy, where finding your next meal is as nourishing
             for your body as it is effortless for your schedule. Our platform
@@ -58,11 +57,13 @@ const AboutUs = () => {
           <Carousel indicators={false} controls={false} interval={3000}>
             <Carousel.Item>
               <div className="testimonial">
-                <img
-                  className="testimonial-image"
-                  src={review}
-                  alt="Kian Graham"
-                />
+                <center>
+                  <img
+                    className="testimonial-image"
+                    src={review}
+                    alt="Kian Graham"
+                  />
+                </center>
                 <div className="testimonial-text">
                   <h5>Kian Graham</h5>
                   <p>
@@ -77,11 +78,14 @@ const AboutUs = () => {
             </Carousel.Item>
             <Carousel.Item>
               <div className="testimonial">
-                <img
-                  className="testimonial-image"
-                  src={review2}
-                  alt="Hannah Shield"
-                />
+                <center>
+                  <img
+                    className="testimonial-image"
+                    src={review2}
+                    alt="Hannah Shield"
+                  />
+                </center>
+
                 <div className="testimonial-text">
                   <h5>Hannah Shield</h5>
                   <p>
@@ -98,11 +102,13 @@ const AboutUs = () => {
             </Carousel.Item>
             <Carousel.Item>
               <div className="testimonial">
-                <img
-                  className="testimonial-image"
-                  src={review3}
-                  alt="Bob Warret"
-                />
+                <center>
+                  <img
+                    className="testimonial-image"
+                    src={review3}
+                    alt="Bob Warret"
+                  />
+                </center>
                 <div className="testimonial-text">
                   <h5>Bob Warret</h5>
                   <p>
