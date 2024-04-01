@@ -3,7 +3,7 @@ import "react-bootstrap"
 
 const Contacts = () => {
   return (
-    <section class="py-5 bg-light text-dark rounded mt-3 ml-3 mr-3">
+    <section class="py-5 bg-light text-dark rounded mt-4 ml-4 mr-4">
       <div class="container-fluid p-lg-0">
         <div class="row g-0 align-items-center">
           <div class="col-lg-6">
@@ -57,7 +57,7 @@ const Contacts = () => {
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="mt-5 mt-lg-0">
+            <div class="mt-5 mt-lg-0 mr-3">
               <img
                 alt=""
                 class="img-fluid"
