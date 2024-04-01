@@ -47,7 +47,7 @@ const AboutUs = () => {
           </p>
         </Col>
       </Row>
-      <Row className="middle-section">
+      <Row className="middle-section left-right-align">
         <Col md={4} className="left-middle-card">
           <center>
             <h1 className="footer-title-text">What People Say</h1>
