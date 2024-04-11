@@ -33,7 +33,9 @@ individual dietary plans. The app aims to make meal planning more accessible, pe
 
 ## Visit the App on
 
-https://recipe-finder-client.onrender.com
+https://recipe-finder-healthy.netlify.app
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a1e9fb68-4fd1-477b-add1-90684fe75d26/deploy-status)](https://app.netlify.com/sites/recipe-finder-healthy/deploys)
 
 ## Deployment
 
